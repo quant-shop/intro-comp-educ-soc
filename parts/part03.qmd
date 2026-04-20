@@ -28,7 +28,7 @@ editor_options:
 
 In this section, we analyze data on Historically Black Colleges and Universities (HBCUs) to explore patterns in location, institutional type, and founding history.
 
----
+------------------------------------------------------------------------
 
 ### Step 1: Load Packages
 
@@ -86,7 +86,6 @@ hbcu %>%
 
 ```
 
-
 ### Step 5: Historical Analysis
 
 When were the HBCUs founded?
@@ -101,7 +100,6 @@ hbcu %>%
     y = "Number of Institutions"
   )
 ```
-
 
 ### Step 6: Geographic Distribution
 
@@ -129,7 +127,6 @@ hbcu %>%
 
 ### Step 7: Mapping
 
-
 ```{r, message=F, warning=F}
 #install.packages("maps", repos = "http://cran.us.r-project.org")
 library(maps)
@@ -148,8 +145,7 @@ hbcu %>%
   )
 ```
 
-
----
+------------------------------------------------------------------------
 
 ## Case Study: Data on State School Districts
 
@@ -194,4 +190,3 @@ We can create variables that answer educational questions.
 str(district_clean)
 # what kinds of questions might you answer with this data set?
 ```
-
