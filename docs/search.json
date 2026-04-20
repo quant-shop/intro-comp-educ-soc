@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "You can download the dataset below:\n\nStudent Data"
+  },
+  {
+    "objectID": "data.html#datasets",
+    "href": "data.html#datasets",
+    "title": "Data",
+    "section": "",
+    "text": "You can download the dataset below:\n\nStudent Data"
+  },
+  {
+    "objectID": "data.html#description",
+    "href": "data.html#description",
+    "title": "Data",
+    "section": "Description",
+    "text": "Description\nThis dataset includes: - GPA - Study hours - Demographics"
+  },
+  {
     "objectID": "parts/part02.html",
     "href": "parts/part02.html",
     "title": "Part 2: Conducting a literature scan",
@@ -8,6 +29,180 @@
     "crumbs": [
       "Workshop materials",
       "Part 2"
+    ]
+  },
+  {
+    "objectID": "computing.html",
+    "href": "computing.html",
+    "title": "Computing",
+    "section": "",
+    "text": "If you plan to use R and RStudio regularly and beyond today’s workshop, you might consider downloading a local copy to your computer. The software is free. The instructions below are provided to support you beyond today’s workshop; due to time, we will not be able to go over these details but I am more than happy to help you when needed – just contact me via email!",
+    "crumbs": [
+      "Workshop information",
+      "Computing"
+    ]
+  },
+  {
+    "objectID": "computing.html#downloading-r-and-rstudio",
+    "href": "computing.html#downloading-r-and-rstudio",
+    "title": "Computing",
+    "section": "Downloading R and RStudio",
+    "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow all steps in order and watch the below video to help you download R and RStudio.\n\n\n\n\nWatch this video to complete the steps below:\n\n- Step 1: Navigate to https://posit.co\n\n\n- Step 2: Click on the Download RStudio link\n\n\n- Step 3: Install base R (Install R)\n\n\n- Step 4: Install the RStudio IDE (Install RStudio)\n\n\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\n\n\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\n\n\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality.\n\nOnce you have completed your downloads, check to see that you can open RStudio (not R).\nIf everything works, you should be able to proceed with the notes found in part 1 of this workshop.\nLet me know if you have any questions.",
+    "crumbs": [
+      "Workshop information",
+      "Computing"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome students and colleagues!",
+    "section": "",
+    "text": "Thank you for joining us. This site is to support your learning during today’s introduction to Computational Studies in Education and the Social Sciences.\nComputational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.\nInstead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:\nGiven our time constraints today, we’ll focus on a few key foundations:",
+    "crumbs": [
+      "Workshop information",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Welcome students and colleagues!",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nPart\nTopic\nDuration\nTime\n\n\n\n\n\nWelcome & site orientation\n10 minutes\n5:00–5:10 PM\n\n\n1\nGetting started in R and Posit\n30 minutes\n5:10–5:40 PM\n\n\n\nBreak\n5 minutes\n5:40–5:45 PM\n\n\n2\nConducting a literature scan\n15 minutes\n5:45–6:00 PM\n\n\n\nBreak\n5 minutes\n6:00–6:05 PM\n\n\n3\nWorking with large-scale data\n45 minutes\n6:05–6:50 PM\n\n\n\nQ&A\n10 minutes\n6:50–7:00 PM",
+    "crumbs": [
+      "Workshop information",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Welcome students and colleagues!",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nData\nCode templates",
+    "crumbs": [
+      "Workshop information",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "parts/part01-slides.html#using-posit-cloud",
+    "href": "parts/part01-slides.html#using-posit-cloud",
+    "title": "Part 1: Getting started",
+    "section": "Using Posit Cloud",
+    "text": "Using Posit Cloud\nPosit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here."
+  },
+  {
+    "objectID": "parts/part01-slides.html#downloading-r-and-rstudio",
+    "href": "parts/part01-slides.html#downloading-r-and-rstudio",
+    "title": "Part 1: Getting started",
+    "section": "Downloading R and RStudio",
+    "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow the steps below in order.\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality."
+  },
+  {
+    "objectID": "parts/part01-slides.html#directories",
+    "href": "parts/part01-slides.html#directories",
+    "title": "Part 1: Getting started",
+    "section": "Directories",
+    "text": "Directories\nDirectories help us organizer our R projects efficiently.\nA common structure includes a root directory that helps set the working directory automatically. Within this root, subdirectories such as “Data” for storing datasets, “src” or “R” for R scripts and functions, “output” for results, and “plots” for visualizations are typically used. This organization enhances project management, improves collaboration, and simplifies file referencing. Using relative file paths allows for more portable code, making it easier to share projects across different computers or with collaborators.\nSee your current working directory\nTo see your current working directory, we’ll run the getwd() command.\n\ngetwd()\n\nList files in your working directory\nTo view files in your working directory, we’ll run the list.files() command.\n\nlist.files()\n\nCreate a new directory\nTo create a new directory, we’ll run the dir.create() command.\n\ndir.create(\"name_of_new_folder\")\n\nSet your working directory\nTo set your working directory, we’ll run the setwd() command.\n\nsetwd()\n\nVerify the change\nWhen you set a new working directory, you want to verify the change by using getwd().\n\ngetwd()"
+  },
+  {
+    "objectID": "parts/part01-slides.html#packages",
+    "href": "parts/part01-slides.html#packages",
+    "title": "Part 1: Getting started",
+    "section": "Packages",
+    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//RtmpTIix6b/downloaded_packages\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are peachy!\""
+  },
+  {
+    "objectID": "parts/part01-slides.html#arithmetic-in-r",
+    "href": "parts/part01-slides.html#arithmetic-in-r",
+    "title": "Part 1: Getting started",
+    "section": "Arithmetic in R",
+    "text": "Arithmetic in R\nWe will learn how to calculate values in R."
+  },
+  {
+    "objectID": "parts/part01-slides.html#variables-in-r",
+    "href": "parts/part01-slides.html#variables-in-r",
+    "title": "Part 1: Getting started",
+    "section": "Variables in R",
+    "text": "Variables in R\nWe will learn to give a variable (or character) a value."
+  },
+  {
+    "objectID": "parts/part01.html",
+    "href": "parts/part01.html",
+    "title": "Part 1: Getting started",
+    "section": "",
+    "text": "Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here.",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#using-posit-cloud",
+    "href": "parts/part01.html#using-posit-cloud",
+    "title": "Part 1: Getting started",
+    "section": "",
+    "text": "Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here.",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#downloading-r-and-rstudio",
+    "href": "parts/part01.html#downloading-r-and-rstudio",
+    "title": "Part 1: Getting started",
+    "section": "Downloading R and RStudio",
+    "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow the steps below in order.\n\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\n\n\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\n\n\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality.",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#directories",
+    "href": "parts/part01.html#directories",
+    "title": "Part 1: Getting started",
+    "section": "Directories",
+    "text": "Directories\nDirectories help us organizer our R projects efficiently.\nA common structure includes a root directory that helps set the working directory automatically. Within this root, subdirectories such as “Data” for storing datasets, “src” or “R” for R scripts and functions, “output” for results, and “plots” for visualizations are typically used. This organization enhances project management, improves collaboration, and simplifies file referencing. Using relative file paths allows for more portable code, making it easier to share projects across different computers or with collaborators.\n\nSee your current working directory\nTo see your current working directory, we’ll run the getwd() command.\n\ngetwd()\n\n\n\nList files in your working directory\nTo view files in your working directory, we’ll run the list.files() command.\n\nlist.files()\n\n\n\nCreate a new directory\nTo create a new directory, we’ll run the dir.create() command.\n\ndir.create(\"name_of_new_folder\")\n\n\n\nSet your working directory\nTo set your working directory, we’ll run the setwd() command.\n\nsetwd()\n\n\nVerify the change\nWhen you set a new working directory, you want to verify the change by using getwd().\n\ngetwd()",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#packages",
+    "href": "parts/part01.html#packages",
+    "title": "Part 1: Getting started",
+    "section": "Packages",
+    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\n\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//RtmpTIix6b/downloaded_packages\n\n\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\n\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are peachy!\"",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#arithmetic-in-r",
+    "href": "parts/part01.html#arithmetic-in-r",
+    "title": "Part 1: Getting started",
+    "section": "Arithmetic in R",
+    "text": "Arithmetic in R\nWe will learn how to calculate values in R.\n\n\n1 + 2  # the 'plus sign' computes the sum\n\n[1] 3\n\n\n\n\n2 - 3  # the 'minus sign' computes the difference\n\n[1] -1\n\n\n\n\n3 * 4  # the 'asterisk' computes the product\n\n[1] 12\n\n\n\n\n4 / 5 # the 'forward slash' computes the quotient\n\n[1] 0.8\n\n\n\n\n# we can also compute the sum of the first 100 positive integers\nsum(1:100) \n\n[1] 5050\n\n\n\nExplore different object types\nFor this task, we will explore three object types: numeric, character, and logic values.\n\nTask 2-a: Compute a mathematical statement and create a numeric variable\n\n1 + 2\n\n[1] 3\n\n\nWe can assign a variable to this statement by using an assignment operator: &lt;-\n\na &lt;- 1 + 2\n\nWe can also use an equal sign to assign values: \\(=\\)\n\na = 1 + 2\n\nType “a” to show the value of the variable\n\na\n\n[1] 3\n\n\n\nCreate a numeric variable “b” that is the product of “a” and “5”\n\nb = a*5\n\nType “b” in your console to show the product of the two variables\n\nb\n\n[1] 15\n\n\nDivide b by 4\n\nb / 4\n\n[1] 3.75\n\n\nTake the square root of b\n\nsqrt(b)\n\n[1] 3.872983\n\n\n\nCompute the natural log of b\n\nlog(b)\n\n[1] 2.70805\n\n\nCompute the common log of b\n\nlog10(b)\n\n[1] 1.176091\n\n\nFind 1 minus the square root of b\n\n1-sqrt(b)\n\n[1] -2.872983\n\n\n\nAttempt to find the square root of “1 minus the square root of b” - which is a negative value\n\nsqrt(1-b)\n\nWarning in sqrt(1 - b): NaNs produced\n\n\n[1] NaN\n\n\nNaN stands for “Not a number”. This occurs because there is currently no defined value to recognize the square root of negative numbers in R. But we can compute the square root on the absolute value of this difference, if needed.\n\nsqrt(abs(1-b))\n\n[1] 3.741657\n\n\n\nWe can insert longer or more complex mathematical statements too. For example, we can find the absolute value of the sum of -1 and the square root of b cubed and then subtract from that the value of 3 times the square root of b.\nNotice the use of parentheses.\n\nabs(-1+sqrt(b^3)) - 3*(sqrt(b))\n\n[1] 45.4758\n\n\nWe can override the original value of y to match the mathematical statement we generated above.\n\ny &lt;- abs(-1+sqrt(b^3)) - 3*(sqrt(b))\ny\n\n[1] 45.4758\n\n\nWe consider all of the previous objects to be numeric.\n\nWe can also create objects to hold non-numeric values.\nThere are two types of non-numeric values: character values and logic values.\n\nCharacter values\n\ncharacter &lt;- 'some label'\ncharacter\n\n[1] \"some label\"\n\n\nWe can create a character value using the ‘,’ or “,” quotes.\n\ncharacter &lt;- \"some label\"\ncharacter\n\n[1] \"some label\"\n\n\n\n\n\nLogic values\nLogic values can either be TRUE or FALSE\n\nlogic_true &lt;- TRUE\nlogic_false &lt;- FALSE\n\n\nlogic_true\n\n[1] TRUE\n\nlogic_false\n\n[1] FALSE\n\n\nWe can also use T for TRUE and F for FALSE.\n\nlogic_true &lt;- T\nlogic_false &lt;- F\n\n\nlogic_true\n\n[1] TRUE\n\nlogic_false\n\n[1] FALSE",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "parts/part01.html#variables-in-r",
+    "href": "parts/part01.html#variables-in-r",
+    "title": "Part 1: Getting started",
+    "section": "Variables in R",
+    "text": "Variables in R\nWe will learn to give a variable (or character) a value.\n\nUse the different assignment operators\n\ny = 2 # the equal sign can be used as an assignment operator\n\ny &lt;-2 # a \"less than\" sign and dash can also be used as an assignment operator\n\ny # R stores all values you assign, so you must \"call\" any variables to see their values\n\n[1] 2\n\n\n\nSet x equal to two added to three\n\nx = 2 + 3\nx\n\n[1] 5\n\n\n\nSet y equal to two minus three\n\ny = 2 - 3\ny\n\n[1] -1\n\n\n\nSet z equal to two times three\n\nz = 2 * 3\nz\n\n[1] 6\n\n\n\nOverwrite the value of y by setting y equal to x divided by z\n\ny = x / z\ny\n\n[1] 0.8333333",
+    "crumbs": [
+      "Workshop materials",
+      "Part 1"
     ]
   }
 ]
