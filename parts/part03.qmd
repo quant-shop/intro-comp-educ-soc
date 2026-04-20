@@ -191,6 +191,7 @@ district_clean <- district %>%
 We can create variables that answer educational questions.
 
 ```{r}
-
+str(district_clean)
+# what kinds of questions might you answer with this data set?
 ```
 
