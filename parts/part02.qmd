@@ -14,7 +14,7 @@ format:
     smaller: false
     slide-number: c/t #< collapsted/total
     logo: "../img/howard-logo.jpg"
-    footer: "[Workshop GitHub](https://github.com/quant-shop/intro-comp-educ-soc/)"
+    footer: "[Workshop GitHub](https://github.com/quant-shop/intro-comp-educ-soc)"
     toc: false
     echo: true
     incremental: false
