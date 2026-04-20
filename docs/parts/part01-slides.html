@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Nathan Alexander, PhD">
-  <title>Introduction to Computational Studies in Education and the Social Sciences – Part 3: Working with large-scale data</title>
+  <title>Introduction to Computational Studies in Education and the Social Sciences – Part 2: Conducting a literature scan</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -121,7 +186,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Part 3: Working with large-scale data – Introduction to Computational Studies in Education and the Social Sciences">
+<meta property="og:title" content="Part 2: Conducting a literature scan – Introduction to Computational Studies in Education and the Social Sciences">
 <meta property="og:description" content="Intro to Computational Studies in Education and the Social Sciences">
 <meta property="og:site_name" content="Introduction to Computational Studies in Education and the Social Sciences">
 </head>
@@ -130,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Part 3: Working with large-scale data</h1>
+  <h1 class="title">Part 2: Conducting a literature scan</h1>
   <p class="subtitle">Intro to Computational Studies in Education and the Social Sciences</p>
 
 <div class="quarto-title-authors">
@@ -150,6 +215,121 @@ Nathan Alexander, PhD
 </section>
 <section class="slide level2">
 
+<h3 id="preparing-an-annotated-bibliography">Preparing an annotated bibliography</h3>
+<p>Research requires knowledge of the peer-reviewed literature. We will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.</p>
+<p>Once you are set up in R from <a href="parts/part01.qmd">part 1</a>, we’ll start working with the code below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#install.packages("openalexR")</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(openalexR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'openalexR' was built under R version 4.5.2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Search for works related to your social justice topic</span></span>
+<span id="cb3-2"><a></a>works_search <span class="ot">&lt;-</span> <span class="fu">oa_fetch</span>(</span>
+<span id="cb3-3"><a></a>  <span class="at">entity =</span> <span class="st">"works"</span>,</span>
+<span id="cb3-4"><a></a>  <span class="at">title.search =</span> <span class="fu">c</span>(<span class="st">"BlackCrit"</span>, <span class="st">"mixed method"</span>, <span class="st">"afropessimism"</span>),</span>
+<span id="cb3-5"><a></a>  <span class="at">from_publication_date =</span> <span class="st">"2026-04-01"</span>,</span>
+<span id="cb3-6"><a></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">sort =</span> <span class="st">"cited_by_count:desc"</span>),</span>
+<span id="cb3-7"><a></a>  <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Requesting url:
+&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cmixed%20method%7Cafropessimism%2Cfrom_publication_date%3A2026-04-01&amp;sort=cited_by_count%3Adesc&gt;
+ℹ Getting 4 pages of results with a total of 679 records...
+⠙ OpenAlex downloading [2/4] ■■■■■■■■■■■■■■■■                  50% ETA:  1s
+
+⠹ OpenAlex downloading [3/4] ■■■■■■■■■■■■■■■■■■■■■■■           75% ETA:  1s
+
+⠹ OpenAlex downloading [4/4] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s
+
+
+
+⠙ Converting [245/679] ■■■■■■■■■■■■                      36% ETA:  2s
+
+⠹ Converting [587/679] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  0s
+
+⠹ Converting [679/679] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Display the top results</span></span>
+<span id="cb5-2"><a></a>works_search <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">show_works</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 54%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 2%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">display_name</th>
+<th style="text-align: left;">first_author</th>
+<th style="text-align: left;">last_author</th>
+<th style="text-align: left;">is_oa</th>
+<th style="text-align: left;">top_concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">W7154062697</td>
+<td style="text-align: left;">Bridging the Gap between Automated Intervention and Actual User Experience: A Mixed-Methods Study on Mobile Accessibility Issues for Screen Reader Users</td>
+<td style="text-align: left;">Syed Fatiul Huq</td>
+<td style="text-align: left;">Sam Malek</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Bridging (networking), Categorization, Construct (python library)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W7154066130</td>
+<td style="text-align: left;">Animacy and the Eye of the Beholder: A Mixed-Methods Study on Cognitive Animacy with a Kinetic Origami Surface</td>
+<td style="text-align: left;">Charalampos Krekoukiotis</td>
+<td style="text-align: left;">Kouta Minamizawa</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Animacy, Cognition, Surface (topology)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">W7154151789</td>
+<td style="text-align: left;">The Last Door You Open: A Mixed-Methods Study on Design Strategies for Positive Disengagement in Virtual Reality Games</td>
+<td style="text-align: left;">Ziyan Wang</td>
+<td style="text-align: left;">Tengjia Zuo</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Disengagement theory, Narrative, Virtual reality</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W7154175323</td>
+<td style="text-align: left;">With Visual Integrity and Care: A Framework for Mixed Methods Research on Visual Social Data</td>
+<td style="text-align: left;">Nina Lutz</td>
+<td style="text-align: left;">Kate Starbird</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Visual methods, Visual research, The Internet</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">W7154731961</td>
+<td style="text-align: left;">Peer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”</td>
+<td style="text-align: left;">Ludo Waltman</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">MEDLINE, Key (lock), Data collection</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W7154751962</td>
+<td style="text-align: left;">Peer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”</td>
+<td style="text-align: left;">Kazuki Ide</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">MEDLINE, Key (lock), Data collection</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>
