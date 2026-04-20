@@ -396,10 +396,43 @@ $ type    &lt;chr&gt; "Public, 4 Year", "Public, 4 Year", "Public, 4 Year", "Pub
 </div>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="case-study-data-on-state-school-districts" class="slide level2">
+<h2>Case Study: Data on State School Districts</h2>
+<h3 id="step-1-load-the-libraries">Step 1: Load the libraries</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>district <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/state-district-data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-2"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb19-3"><a></a><span class="fu">library</span>(stringr)</span>
+<span id="cb19-4"><a></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="step-2-load-the-data-1">Step 2: Load the data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>district <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://github.com/quant-shop/intro-comp-educ-soc/blob/main/data/state-district-data.csv"</span>)</span>
+<span id="cb20-2"><a></a><span class="co"># district &lt;- read.csv("../data/state-district-data.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="step-3-clean-the-data-1">Step 3: Clean the data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>district_clean <span class="ot">&lt;-</span> district <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"–"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"†"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span><span class="fu">str_trim</span>(.))) <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a></a>  </span>
+<span id="cb21-7"><a></a>  <span class="co"># Convert numeric-like columns</span></span>
+<span id="cb21-8"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(</span>
+<span id="cb21-9"><a></a>    <span class="fu">contains</span>(<span class="st">"students"</span>) <span class="sc">|</span> <span class="fu">contains</span>(<span class="st">"teachers"</span>) <span class="sc">|</span> <span class="fu">contains</span>(<span class="st">"enrollment"</span>) <span class="sc">|</span> <span class="fu">contains</span>(<span class="st">"ratio"</span>),</span>
+<span id="cb21-10"><a></a>    <span class="sc">~</span><span class="fu">parse_number</span>(.)</span>
+<span id="cb21-11"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="step-4-feature-engineering">Step 4: Feature engineering</h3>
+<p>We can create variables that answer educational questions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">str</span>(district_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   2615 obs. of  1 variable:
+ $ x_doctype_html: chr  "&lt;html" "lang=en" "" "data-color-mode=auto data-light-theme=light data-dark-theme=dark" ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># what kinds of questions might you answer with this data set?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
