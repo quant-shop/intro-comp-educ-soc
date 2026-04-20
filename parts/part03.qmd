@@ -1,0 +1,25 @@
+---
+title: "Part 3: Working with large-scale data"
+subtitle: "Intro to Computational Studies in Education and the Social Sciences"
+author: "Nathan Alexander, PhD"
+institute: 
+  - "School of Education"
+  - "Center for Applied Data Science and Analytics"
+format: 
+  html: default
+  revealjs:
+    output-file: part01-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    slide-number: c/t #< collapsted/total
+    logo: "../img/howard-logo.jpg"
+    footer: "[Workshop GitHub](https://github.com/quant-shop/intro-comp-educ-soc/)"
+    toc: false
+    echo: true
+    incremental: false
+geometry: margin=1.0in
+editor_options:
+  markdown:
+    wrap: sentence
+---

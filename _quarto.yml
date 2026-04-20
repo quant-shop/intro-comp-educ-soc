@@ -1,18 +1,64 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Computational Studies in Education"
-  navbar:
-    left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Part 1"
-        href: csie_part1.qmd
-      - text: "Data"
-        href: data.qmd
-
+  page-navigation: true
+  title: "Introduction to Computational Studies in Education and the Social Sciences"
+  description: "Homepage for April 20 HU Workshop"
+  site-url: "https://github.com/quant-shop/intro-comp-educ-soc/"
+  
+  repo-url: https://github.com/quant-shop/intro-comp-educ-soc/
+  
+  open-graph: true
+  
+  page-footer:
+    right: "This page was built by Nathan Alexander, PhD in [Quarto](https://quarto.org/)"
+    left: "&copy; Copyright 2026, Nathan Alexander"
+    background: "#D9E3E4"
+    
+  sidebar:
+    background: "#D9E3E4"
+    logo: "img/howard-logo.jpg"
+    pinned: true
+    align: center
+    tools: 
+      - icon: github
+        href: https://github.com/quant-shop/intro-comp-educ-soc
+        text: "GitHub organization"
+  
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:  
+    - section: "Workshop information"
+      contents:
+        - href: index.qmd
+          text: Home
+        - href: computing.qmd
+          text: Computing
+    - section: "Workshop materials"
+      contents:
+        - href: parts/part01.qmd
+          text: Part 1
+        - href: parts/part02.qmd
+          text: Part 2
+        - href: parts/part03.qmd
+          text: Part 3      
+          
 format:
   html:
-    theme: cerulean
+    theme: 
+      light: [cosmo, style/data202.scss]
+      dark: [cosmo, style/data202.scss, style/theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    callout-appearance: simple
+    colorlinnks: true
+    code-copy: true
+    code-overflow: wrap
     toc: true
+    
+execute: 
+  freeze: auto
+    
+editor: visual

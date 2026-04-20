@@ -1,16 +1,30 @@
 ---
-title: "Workshop Overview"
+title: "Welcome students and colleagues!"
 ---
 
-## Introduction
+Thank you for joining us. This site is to support your learning during today's introduction to *Computational Studies in Education and the Social Sciences*.
 
-Welcome to the workshop on Computational Studies in Education and the Social Sciences.
+Computational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.
 
-## Sections
+Instead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:
 
-- Part 1: Getting Started
-- Part 2: Data & Visualization
-- Part 3: Modeling
+- Analyzing student performance data from online learning platforms
+- Studying social behavior through social media or digital interactions
+- Modeling how ideas spread in classrooms or communities
+
+Given our time constraints today, we'll focus on a few key foundations:
+
+## Schedule
+
+| Part | Topic                          | Duration   | Time            |
+|------|--------------------------------|------------|-----------------|
+|      | Welcome & site orientation     | 10 minutes | 5:00–5:10 PM    |
+| 1    | [Getting started in R and Posit](parts/part01.qmd) | 30 minutes | 5:10–5:40 PM    |
+|      | Break                          | 5 minutes  | 5:40–5:45 PM    |
+| 2    | [Conducting a literature scan](parts/part02.qmd) | 15 minutes | 5:45–6:00 PM    |
+|      | Break                          | 5 minutes  | 6:00–6:05 PM    |
+| 3    | [Working with large-scale data](parts/part03.qmd)  | 45 minutes | 6:05–6:50 PM    |
+|      | Q&A                            | 10 minutes | 6:50–7:00 PM    |
 
 ## Materials
 

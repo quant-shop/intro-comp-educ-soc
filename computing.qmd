@@ -1,0 +1,81 @@
+---
+title: "Computing"
+subtitle: "Intro to Computational Studies in Education and the Social Sciences"
+---
+
+If you plan to use R and RStudio regularly and beyond today's workshop, you might consider downloading a local copy to your computer. The software is free. The instructions below are provided to support you beyond today's workshop; due to time, we will not be able to go over these details but I am more than happy to help you when needed -- just contact me via email!
+
+## Downloading R and RStudio
+
+If you'd like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.
+
+Follow all steps in order and watch the below video to help you download R and RStudio.
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pUe_iD7RJvo?si=q0rb1lzb2Ten8_ZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+</iframe>
+
+</center>
+
+Watch [this](https://www.youtube.com/watch?v=pUe_iD7RJvo&t=93s){target="_blank"} video to complete the steps below:
+
+#### - Step 1: Navigate to <https://posit.co>
+
+#### - Step 2: Click on the Download RStudio link
+
+#### - Step 3: Install base R (Install R)
+
+#### - Step 4: Install the RStudio IDE (Install RStudio)
+
+
+### Download and Install R
+
+-- Visit the [Comprehensive R Archive Network (CRAN) website](https://cran.r-project.org/).
+
+- Select the appropriate option for your operating system (e.g., Windows, macOS, or Linux).
+
+-- Click "Download R" and follow the installation prompts.
+
+- For Windows: Choose "Install R for the first time" and run the downloaded .exe file.
+
+- For macOS: Download the .pkg file and follow the instructions.
+
+- For Linux: Follow system-specific installation steps or build from source if necessary.
+
+-- Leave default options selected during installation unless customization is needed.
+
+### Download and Install RStudio
+
+-- Go to the official [RStudio website](https://posit.co/download/rstudio-desktop/).
+
+- Navigate to the "Download RStudio Desktop" section.
+
+-- Select the download button that corresponds to your operating system.
+
+-- Run the downloaded installer:
+
+- For Windows: Execute the .exe file and follow the setup wizard.
+
+- For macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.
+
+- For Linux: Install using system tools based on your Linux distribution.
+
+-- Complete installation by leaving default options selected unless customization is required.
+
+### Verify Installation
+
+-- Open RStudio after installation.
+
+-- Ensure it detects your installed version of R automatically during setup.
+
+-- Run a the command `print("Hello, World!")` to confirm functionality.
+
+---
+
+Once you have completed your downloads, check to see that you can open RStudio (not R).
+
+If everything works, you should be able to proceed with the notes found in [part 1](parts/part01.qmd) of this workshop.
+
+Let me know if you have any questions.

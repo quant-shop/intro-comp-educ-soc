@@ -1,0 +1,350 @@
+---
+title: "Part 1: Getting started"
+subtitle: "Intro to Computational Studies in Education and the Social Sciences"
+author: "Nathan Alexander, PhD"
+institute: 
+  - "School of Education"
+  - "Center for Applied Data Science and Analytics"
+format: 
+  html: default
+  revealjs:
+    output-file: part01-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    slide-number: c/t #< collapsted/total
+    logo: "../img/howard-logo.jpg"
+    footer: "[Workshop GitHub](https://github.com/quant-shop/intro-comp-educ-soc/)"
+    toc: false
+    echo: true
+    incremental: false
+geometry: margin=1.0in
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+## Using Posit Cloud
+
+Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.
+
+You can access the Posit Cloud [here](https://posit.cloud/).
+
+## Directories
+
+Directories help us organizer our R projects efficiently. 
+
+A common structure includes a root directory that helps set the working directory automatically. Within this root, subdirectories such as "Data" for storing datasets, "src" or "R" for R scripts and functions, "output" for results, and "plots" for visualizations are typically used. This organization enhances project management, improves collaboration, and simplifies file referencing. Using relative file paths allows for more portable code, making it easier to share projects across different computers or with collaborators.
+
+### See your current working directory
+
+To see your current working directory, we'll run the `getwd()` command.
+
+```{r, eval=F}
+getwd()
+```
+
+### List files in your working directory
+
+To view files in your working directory, we'll run the `list.files()` command.
+
+```{r, eval=F}
+list.files()
+```
+
+### Create a new directory
+
+To create a new directory, we'll run the `dir.create()` command.
+
+```{r, eval=F}
+dir.create("name_of_new_folder")
+```
+
+### Set your working directory
+
+To set your working directory, we'll run the `setwd()` command.
+
+```{r, eval=F}
+setwd()
+```
+
+#### Verify the change
+
+When you set a new working directory, you want to verify the change by using `getwd()`.
+
+```{r, eval=F}
+getwd()
+```
+
+## Packages
+
+Packages in R are collections of functions, data, and documentation that extend the language's capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization. 
+
+Packages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.
+
+### Install the Praise package.
+
+```{r, message=F}
+# install the package
+install.packages("praise", repos = "http://cran.us.r-project.org")
+```
+
+### Load the Praise package
+
+```{r}
+# load library
+library(praise)
+```
+
+### Now get some Praise!
+
+```{r}
+# get some praise
+praise()
+```
+
+## Arithmetic in R
+
+We will learn how to calculate values in R.
+
+------------------------------------------------------------------------
+
+```{r}
+1 + 2  # the 'plus sign' computes the sum
+```
+
+------------------------------------------------------------------------
+
+```{r}
+2 - 3  # the 'minus sign' computes the difference
+```
+
+------------------------------------------------------------------------
+
+```{r}
+3 * 4  # the 'asterisk' computes the product
+```
+
+------------------------------------------------------------------------
+
+```{r}
+4 / 5 # the 'forward slash' computes the quotient
+```
+
+------------------------------------------------------------------------
+
+```{r}
+# we can also compute the sum of the first 100 positive integers
+sum(1:100) 
+```
+
+------------------------------------------------------------------------
+
+Explore different object types
+
+For this task, we will explore three object types: *numeric*, *character*, and *logic* values.
+
+#### Task 2-a: Compute a mathematical statement and create a numeric variable
+
+```{r}
+1 + 2
+```
+
+We can assign a variable to this statement by using an assignment operator: \<-
+
+```{r}
+a <- 1 + 2
+```
+
+We can also use an equal sign to assign values: $=$
+
+```{r}
+a = 1 + 2
+```
+
+Type "a" to show the value of the variable
+
+```{r}
+a
+```
+
+------------------------------------------------------------------------
+
+Create a numeric variable "b" that is the product of "a" and "5"
+
+```{r}
+b = a*5
+```
+
+Type "b" in your console to show the product of the two variables
+
+```{r}
+b
+```
+
+Divide b by 4
+
+```{r}
+b / 4
+```
+
+Take the square root of b
+
+```{r}
+sqrt(b)
+```
+
+---
+
+Compute the natural log of b
+
+```{r}
+log(b)
+```
+
+Compute the common log of b
+
+```{r}
+log10(b)
+```
+
+Find 1 minus the square root of b
+
+```{r}
+1-sqrt(b)
+```
+
+------------------------------------------------------------------------
+
+Attempt to find the square root of "1 minus the square root of b" - which is a negative value
+
+```{r}
+sqrt(1-b)
+```
+
+NaN stands for "Not a number". This occurs because there is currently no defined value to recognize the square root of negative numbers in R. But we can compute the square root on the absolute value of this difference, if needed.
+
+```{r}
+sqrt(abs(1-b))
+```
+
+------------------------------------------------------------------------
+
+We can insert longer or more complex mathematical statements too. For example, we can find the absolute value of the sum of -1 and the square root of b cubed and then subtract from that the value of 3 times the square root of b.
+
+Notice the use of parentheses.
+
+```{r}
+abs(-1+sqrt(b^3)) - 3*(sqrt(b))
+```
+
+We can override the original value of y to match the mathematical statement we generated above.
+
+```{r}
+y <- abs(-1+sqrt(b^3)) - 3*(sqrt(b))
+y
+```
+
+We consider all of the previous objects to be numeric.
+
+------------------------------------------------------------------------
+
+We can also create objects to hold non-numeric values.
+
+There are two types of non-numeric values: *character* values and *logic* values.
+
+##### Character values
+
+```{r}
+character <- 'some label'
+character
+```
+
+We can create a character value using the ',' or "," quotes.
+
+```{r}
+character <- "some label"
+character
+```
+
+------------------------------------------------------------------------
+
+##### Logic values
+
+Logic values can either be TRUE or FALSE
+
+```{r}
+logic_true <- TRUE
+logic_false <- FALSE
+```
+
+```{r}
+logic_true
+logic_false
+```
+
+We can also use T for TRUE and F for FALSE.
+
+```{r}
+logic_true <- T
+logic_false <- F
+```
+
+```{r}
+logic_true
+logic_false
+```
+
+## Variables in R
+
+We will learn to give a variable (or character) a value.
+
+------------------------------------------------------------------------
+
+Use the different assignment operators
+
+```{r}
+y = 2 # the equal sign can be used as an assignment operator
+
+y <-2 # a "less than" sign and dash can also be used as an assignment operator
+
+y # R stores all values you assign, so you must "call" any variables to see their values
+```
+
+------------------------------------------------------------------------
+
+Set x equal to two added to three
+
+```{r}
+x = 2 + 3
+x
+```
+
+------------------------------------------------------------------------
+
+Set y equal to two minus three
+
+```{r}
+y = 2 - 3
+y
+```
+
+------------------------------------------------------------------------
+
+Set z equal to two times three
+
+```{r}
+z = 2 * 3
+z
+```
+
+------------------------------------------------------------------------
+
+Overwrite the value of y by setting y equal to x divided by z
+
+```{r}
+y = x / z
+y
+```
+
+------------------------------------------------------------------------

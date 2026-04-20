@@ -1,0 +1,15 @@
+{
+  "hash": "eccb260e8bdd6c83a601a46a438ab527",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Computing\"\nsubtitle: \"DATA 202: Statistically Measuring and Modeling Social Justice\"\n---\n\n\n\n\n## Lab 0: Downloading R and RStudio.\n\nFor Lab #0 you will download two software programs to your computer.\n\nPlease watch the below video to help you download R and RStudio.\n\n<center>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/pUe_iD7RJvo?si=q0rb1lzb2Ten8_ZR\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen>\n\n</iframe>\n\n</center>\n\nWatch [this](https://www.youtube.com/watch?v=pUe_iD7RJvo&t=93s){target=\"_blank\"} video to complete the steps below:\n\n#### - Step 1: Navigate to <https://posit.co>\n\n#### - Step 2: Click on the Download RStudio link\n\n#### - Step 3: Install base R (Install R)\n\n#### - Step 4: Install the RStudio IDE (Install RStudio)\n\nOnce you have completed your downloads, check to see that you can open RStudio (not R).\n\nWe'll pick up here in class next week.\n\n### **Next up**: Preparing for your annotated bibliography\n\nAfter completing Lab 0, you will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research. \n\nOnce you are set up in R, try working with the code below:\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(openalexR)\n\n# Search for works related to your social justice topic\nworks_search <- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"keyword1\", \"your specific topic\"),\n  from_publication_date = \"2020-01-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\n# Display the top results\nworks_search |>\n  head(10) |>\n  show_works() |>\n  knitr::kable()\n```\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
