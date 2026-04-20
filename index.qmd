@@ -1,0 +1,19 @@
+---
+title: "Workshop Overview"
+---
+
+## Introduction
+
+Welcome to the workshop on Computational Studies in Education and the Social Sciences.
+
+## Sections
+
+- Part 1: Getting Started
+- Part 2: Data & Visualization
+- Part 3: Modeling
+
+## Materials
+
+- Slides
+- Data
+- Code templates

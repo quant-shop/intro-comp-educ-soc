@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "Computational Studies in Education"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Part 1"
+        href: csie_part1.qmd
+      - text: "Data"
+        href: data.qmd
+
+format:
+  html:
+    theme: cerulean
+    toc: true

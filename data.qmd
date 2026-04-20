@@ -1,0 +1,16 @@
+---
+title: "Data"
+---
+
+## Datasets
+
+You can download the dataset below:
+
+- [Student Data]()
+
+## Description
+
+This dataset includes:
+- GPA
+- Study hours
+- Demographics

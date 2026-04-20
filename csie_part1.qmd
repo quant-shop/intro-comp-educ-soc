@@ -1,28 +1,11 @@
 ---
-title: "Part 1: Introduction to Computational Studies in Education and the Social Sciences"
-subtitle: "Quantitative Histories Workshop - Spring 2026"
-author: 
-- "Nathan Alexander, PhD, Howard University"
-output:
-  html_document:
-    toc: true
-    toc_depth: 2
-    toc_float: true  # Enable floating TOC in the sidebar
-    number_sections: true
+title: "Part 1: Getting Started"
+format:
+  revealjs:
     theme: cerulean
-    always_allow_html: true
-    self_contained: true
-editor_options:
-  markdown:
-    wrap: sentence
+    slide-number: true
+    incremental: true
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-library(here)
-here::i_am("csie_part1.Rmd")
-```
 
 ## Using Posit Cloud
 
