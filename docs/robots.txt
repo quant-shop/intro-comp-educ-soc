@@ -1,1 +1,1 @@
-Sitemap: https://github.com/quant-shop/intro-comp-educ-soc/sitemap.xml
+Sitemap: https://quant-shop.github.io/intro-comp-educ-soc/sitemap.xml
