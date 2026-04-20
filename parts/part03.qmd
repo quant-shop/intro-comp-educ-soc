@@ -161,23 +161,25 @@ library(janitor)
 ### Step 2: Load the data
 
 ```{r, message=F, warning=F}
-district <- read.csv("https://github.com/quant-shop/intro-comp-educ-soc/blob/main/data/state-district-data.csv")
+district <- read.csv("https://raw.githubusercontent.com/quant-shop/intro-comp-educ-soc/refs/heads/main/data/state-district-data.csv")
 # district <- read.csv("../data/state-district-data.csv")
 
+str(district)
 ```
 
 ### Step 3: Clean the data
 
 ```{r, message=F, warning=F}
 district_clean <- district %>%
-  clean_names() %>%
-  mutate(across(everything(), ~na_if(., "–"))) %>%
-  mutate(across(everything(), ~na_if(., "†"))) %>%
-  mutate(across(where(is.character), ~str_trim(.))) %>%
   
-  # Convert numeric-like columns
+  # Fix missing/suppressed values
+  mutate(across(where(is.character), ~na_if(., "–"))) %>%
+  mutate(across(where(is.character), ~na_if(., "†"))) %>%
+  mutate(across(where(is.character), str_trim)) %>%
+  
+  # Convert numeric columns safely
   mutate(across(
-    contains("students") | contains("teachers") | contains("enrollment") | contains("ratio"),
+    where(is.character),
     ~parse_number(.)
   ))
 ```
