@@ -35,9 +35,11 @@ website:
       contents:
         - href: index.qmd
           text: Home
+        - href: about.qmd
+          text: Facilitator
         - href: computing.qmd
           text: Computing
-    - section: "Workshop materials"
+    - section: "Workshop slides"
       contents:
         - href: parts/part01.qmd
           text: Part 1

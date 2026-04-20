@@ -1,0 +1,12 @@
+---
+title: "About the Facilitator"
+---
+
+Hi folks! My name is Nathan Alexander, PhD and I am an assistant professor in the Howard University School of Education. At Howard, I direct the [Quantitative Histories Workshop](https://quant-shop.github.io){target="_blank"}, which is a computational curriculum collective and community-centered teaching and learning lab. 
+I will be your facilitator for today's workshop. 
+
+You can find out more about me online [here](https://profiles.howard.edu/nathan-alexander){target="_blank"}.
+
+![Workshop facilitator: Nathan Alexander, PhD](img/alexander.jpg){width=20%}
+
+If you have any questions or want to learn more, contact me via email: nathan[dot]alexander[at]howard[dot]edu.

@@ -149,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/part01.html">Workshop materials</a></li><li class="breadcrumb-item"><a href="../parts/part01.html">Part 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/part01.html">Workshop slides</a></li><li class="breadcrumb-item"><a href="../parts/part01.html">Part 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,6 +195,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Facilitator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing</span></a>
   </div>
@@ -204,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Workshop materials</span></a>
+ <span class="menu-text">Workshop slides</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -241,12 +247,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#using-posit-cloud" id="toc-using-posit-cloud" class="nav-link active" data-scroll-target="#using-posit-cloud">Using Posit Cloud</a></li>
-  <li><a href="#downloading-r-and-rstudio" id="toc-downloading-r-and-rstudio" class="nav-link" data-scroll-target="#downloading-r-and-rstudio">Downloading R and RStudio</a>
-  <ul class="collapse">
-  <li><a href="#download-and-install-r" id="toc-download-and-install-r" class="nav-link" data-scroll-target="#download-and-install-r">Download and Install R</a></li>
-  <li><a href="#download-and-install-rstudio" id="toc-download-and-install-rstudio" class="nav-link" data-scroll-target="#download-and-install-rstudio">Download and Install RStudio</a></li>
-  <li><a href="#verify-installation" id="toc-verify-installation" class="nav-link" data-scroll-target="#verify-installation">Verify Installation</a></li>
-  </ul></li>
   <li><a href="#directories" id="toc-directories" class="nav-link" data-scroll-target="#directories">Directories</a>
   <ul class="collapse">
   <li><a href="#see-your-current-working-directory" id="toc-see-your-current-working-directory" class="nav-link" data-scroll-target="#see-your-current-working-directory">See your current working directory</a></li>
@@ -268,7 +268,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/part01.html">Workshop materials</a></li><li class="breadcrumb-item"><a href="../parts/part01.html">Part 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/part01.html">Workshop slides</a></li><li class="breadcrumb-item"><a href="../parts/part01.html">Part 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Part 1: Getting started</h1>
 <p class="subtitle lead">Intro to Computational Studies in Education and the Social Sciences</p>
@@ -308,46 +308,6 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="using-posit-cloud">Using Posit Cloud</h2>
 <p>Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.</p>
 <p>You can access the Posit Cloud <a href="https://posit.cloud/">here</a>.</p>
-</section>
-<section id="downloading-r-and-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-r-and-rstudio">Downloading R and RStudio</h2>
-<p>If you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.</p>
-<p>Follow the steps below in order.</p>
-<section id="download-and-install-r" class="level3">
-<h3 class="anchored" data-anchor-id="download-and-install-r">Download and Install R</h3>
-<p>– Visit the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN) website</a>.</p>
-<ul>
-<li>Select the appropriate option for your operating system (e.g., Windows, macOS, or Linux).</li>
-</ul>
-<p>– Click “Download R” and follow the installation prompts.</p>
-<ul>
-<li><p>For Windows: Choose “Install R for the first time” and run the downloaded .exe file.</p></li>
-<li><p>For macOS: Download the .pkg file and follow the instructions.</p></li>
-<li><p>For Linux: Follow system-specific installation steps or build from source if necessary.</p></li>
-</ul>
-<p>– Leave default options selected during installation unless customization is needed.</p>
-</section>
-<section id="download-and-install-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="download-and-install-rstudio">Download and Install RStudio</h3>
-<p>– Go to the official <a href="https://posit.co/download/rstudio-desktop/">RStudio website</a>.</p>
-<ul>
-<li>Navigate to the “Download RStudio Desktop” section.</li>
-</ul>
-<p>– Select the download button that corresponds to your operating system.</p>
-<p>– Run the downloaded installer:</p>
-<ul>
-<li><p>For Windows: Execute the .exe file and follow the setup wizard.</p></li>
-<li><p>For macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.</p></li>
-<li><p>For Linux: Install using system tools based on your Linux distribution.</p></li>
-</ul>
-<p>– Complete installation by leaving default options selected unless customization is required.</p>
-</section>
-<section id="verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="verify-installation">Verify Installation</h3>
-<p>– Open RStudio after installation.</p>
-<p>– Ensure it detects your installed version of R automatically during setup.</p>
-<p>– Run a the command <code>print("Hello, World!")</code> to confirm functionality.</p>
-</section>
 </section>
 <section id="directories" class="level2">
 <h2 class="anchored" data-anchor-id="directories">Directories</h2>
@@ -401,7 +361,7 @@ window.Quarto = {
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//RtmpTIix6b/downloaded_packages</code></pre>
+    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//Rtmp2fxt6e/downloaded_packages</code></pre>
 </div>
 </div>
 </section>
@@ -418,7 +378,7 @@ The downloaded binary packages are in
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get some praise</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">praise</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "You are peachy!"</code></pre>
+<pre><code>[1] "You are bedazzling!"</code></pre>
 </div>
 </div>
 </section>
@@ -920,7 +880,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.com\/quant-shop\/intro-comp-educ-soc\/");
+      var filterRegex = new RegExp("https:\/\/quant-shop\.github\.io\/intro-comp-educ-soc\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

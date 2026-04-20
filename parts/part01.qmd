@@ -24,11 +24,30 @@ editor_options:
     wrap: sentence
 ---
 
+```{r setup, include=F, warning=F, message=F}
+library(here)
+here::i_am(part01.qmd)
+```
+
 ## Using Posit Cloud
 
 Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.
 
 You can access the Posit Cloud [here](https://posit.cloud/).
+
+## Layout
+
+When you get into Posit Cloud you will see the following layout:
+
+![RStudio Panel](../img/rstudio-panel-1.png)
+
+This panel include the Console on the left and the options tabs on the right.
+
+When we open up our first file, a Markdown file, you will see the panel change as follows.
+
+![RStudio Panel](../img/rstudio-panel-2.png)
+
+We will work from the top left panel, in the Markdown file, and see our output in the Console on the bottom left.
 
 ## Directories
 

@@ -25,9 +25,9 @@
     "href": "parts/part02.html",
     "title": "Part 2: Conducting a literature scan",
     "section": "",
-    "text": "Preparing an annotated bibliography\nResearch requires knowledge of the peer-reviewed literature. We will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R from part 1, we’ll start working with the code below:\n\n#install.packages(\"openalexR\")\nlibrary(openalexR)\n\nWarning: package 'openalexR' was built under R version 4.5.2\n\n\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"BlackCrit\", \"mixed method\", \"afropessimism\"),\n  from_publication_date = \"2026-04-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\nRequesting url:\n&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cmixed%20method%7Cafropessimism%2Cfrom_publication_date%3A2026-04-01&sort=cited_by_count%3Adesc&gt;\nℹ Getting 4 pages of results with a total of 679 records...\n⠙ OpenAlex downloading [2/4] ■■■■■■■■■■■■■■■■                  50% ETA:  1s\n\n⠹ OpenAlex downloading [3/4] ■■■■■■■■■■■■■■■■■■■■■■■           75% ETA:  1s\n\n⠹ OpenAlex downloading [4/4] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n\n\n⠙ Converting [235/679] ■■■■■■■■■■■                       35% ETA:  2s\n\n⠙ Converting [679/679] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nid\ndisplay_name\nfirst_author\nlast_author\nis_oa\ntop_concepts\n\n\n\n\nW7154062697\nBridging the Gap between Automated Intervention and Actual User Experience: A Mixed-Methods Study on Mobile Accessibility Issues for Screen Reader Users\nSyed Fatiul Huq\nSam Malek\nTRUE\nBridging (networking), Categorization, Construct (python library)\n\n\nW7154066130\nAnimacy and the Eye of the Beholder: A Mixed-Methods Study on Cognitive Animacy with a Kinetic Origami Surface\nCharalampos Krekoukiotis\nKouta Minamizawa\nFALSE\nAnimacy, Cognition, Surface (topology)\n\n\nW7154151789\nThe Last Door You Open: A Mixed-Methods Study on Design Strategies for Positive Disengagement in Virtual Reality Games\nZiyan Wang\nTengjia Zuo\nTRUE\nDisengagement theory, Narrative, Virtual reality\n\n\nW7154175323\nWith Visual Integrity and Care: A Framework for Mixed Methods Research on Visual Social Data\nNina Lutz\nKate Starbird\nTRUE\nVisual methods, Visual research, The Internet\n\n\nW7154731961\nPeer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”\nLudo Waltman\nNA\nTRUE\nMEDLINE, Key (lock), Data collection\n\n\nW7154751962\nPeer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”\nKazuki Ide\nNA\nTRUE\nMEDLINE, Key (lock), Data collection",
+    "text": "Most of us use Google Scholar to find research liteature. However, there are a host of computational tools that we can use to conduct a literature scan or go more in-depth to conduct a systematic literature review.\nPart of this process is related to the important process of using the literature to help us build theory.\n\n\n\nTheory construction\n\n\nTo that end, good research requires knowledge of the peer-reviewed literature.",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 2"
     ]
   },
@@ -56,9 +56,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome students and colleagues!",
+    "title": "Introduction to Computational Studies in Education and the Social Sciences",
     "section": "",
-    "text": "Thank you for joining us. This site is to support your learning during today’s introduction to Computational Studies in Education and the Social Sciences.\nComputational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.\nInstead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:\nGiven our time constraints today, we’ll focus on a few key foundations:",
+    "text": "Welcome students and colleagues! Thank you for joining us. This site is to support your learning during today’s introduction to Computational Studies in Education and the Social Sciences.\nMy name is Professor Nathan Alexander and I will be your facilitator today.\nComputational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.\nInstead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:\nGiven our time constraints today, we’ll focus on a few key foundations:",
     "crumbs": [
       "Workshop information",
       "Home"
@@ -67,7 +67,7 @@
   {
     "objectID": "index.html#schedule",
     "href": "index.html#schedule",
-    "title": "Welcome students and colleagues!",
+    "title": "Introduction to Computational Studies in Education and the Social Sciences",
     "section": "Schedule",
     "text": "Schedule\n\n\n\nPart\nTopic\nDuration\nTime\n\n\n\n\n\nWelcome & site orientation\n10 minutes\n5:00–5:10 PM\n\n\n1\nGetting started in R and Posit\n30 minutes\n5:10–5:40 PM\n\n\n\nBreak\n5 minutes\n5:40–5:45 PM\n\n\n2\nConducting a literature scan\n15 minutes\n5:45–6:00 PM\n\n\n\nBreak\n5 minutes\n6:00–6:05 PM\n\n\n3\nWorking with large-scale data\n45 minutes\n6:05–6:50 PM\n\n\n\nQ&A\n10 minutes\n6:50–7:00 PM",
     "crumbs": [
@@ -78,7 +78,7 @@
   {
     "objectID": "index.html#materials",
     "href": "index.html#materials",
-    "title": "Welcome students and colleagues!",
+    "title": "Introduction to Computational Studies in Education and the Social Sciences",
     "section": "Materials",
     "text": "Materials\n\nSlides\nData\nCode templates",
     "crumbs": [
@@ -112,7 +112,7 @@
     "href": "parts/part01-slides.html#packages",
     "title": "Part 1: Getting started",
     "section": "Packages",
-    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//RtmpTIix6b/downloaded_packages\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are peachy!\""
+    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//Rtmp2fxt6e/downloaded_packages\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are bedazzling!\""
   },
   {
     "objectID": "parts/part01-slides.html#arithmetic-in-r",
@@ -135,7 +135,7 @@
     "section": "",
     "text": "Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here.",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -146,7 +146,7 @@
     "section": "",
     "text": "Posit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here.",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -157,7 +157,7 @@
     "section": "Downloading R and RStudio",
     "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow the steps below in order.\n\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\n\n\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\n\n\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality.",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -168,7 +168,7 @@
     "section": "Directories",
     "text": "Directories\nDirectories help us organizer our R projects efficiently.\nA common structure includes a root directory that helps set the working directory automatically. Within this root, subdirectories such as “Data” for storing datasets, “src” or “R” for R scripts and functions, “output” for results, and “plots” for visualizations are typically used. This organization enhances project management, improves collaboration, and simplifies file referencing. Using relative file paths allows for more portable code, making it easier to share projects across different computers or with collaborators.\n\nSee your current working directory\nTo see your current working directory, we’ll run the getwd() command.\n\ngetwd()\n\n\n\nList files in your working directory\nTo view files in your working directory, we’ll run the list.files() command.\n\nlist.files()\n\n\n\nCreate a new directory\nTo create a new directory, we’ll run the dir.create() command.\n\ndir.create(\"name_of_new_folder\")\n\n\n\nSet your working directory\nTo set your working directory, we’ll run the setwd() command.\n\nsetwd()\n\n\nVerify the change\nWhen you set a new working directory, you want to verify the change by using getwd().\n\ngetwd()",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -177,9 +177,9 @@
     "href": "parts/part01.html#packages",
     "title": "Part 1: Getting started",
     "section": "Packages",
-    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\n\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//RtmpTIix6b/downloaded_packages\n\n\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\n\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are peachy!\"",
+    "text": "Packages\nPackages in R are collections of functions, data, and documentation that extend the language’s capabilities. They allow users to easily share and reuse code, making R a powerful and flexible tool for data analysis and visualization.\nPackages can be installed from repositories like CRAN, and once installed, they can be loaded into an R session to access their functionality. The tidyverse, for example, is a popular collection of packages that provides a consistent and user-friendly approach to data manipulation and visualization.\n\nInstall the Praise package.\n\n# install the package\ninstall.packages(\"praise\", repos = \"http://cran.us.r-project.org\")\n\n\nThe downloaded binary packages are in\n    /var/folders/t2/v2ypghs120z45678ty2nqfk00000gn/T//Rtmp2fxt6e/downloaded_packages\n\n\n\n\nLoad the Praise package\n\n# load library\nlibrary(praise)\n\n\n\nNow get some Praise!\n\n# get some praise\npraise()\n\n[1] \"You are bedazzling!\"",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -190,7 +190,7 @@
     "section": "Arithmetic in R",
     "text": "Arithmetic in R\nWe will learn how to calculate values in R.\n\n\n1 + 2  # the 'plus sign' computes the sum\n\n[1] 3\n\n\n\n\n2 - 3  # the 'minus sign' computes the difference\n\n[1] -1\n\n\n\n\n3 * 4  # the 'asterisk' computes the product\n\n[1] 12\n\n\n\n\n4 / 5 # the 'forward slash' computes the quotient\n\n[1] 0.8\n\n\n\n\n# we can also compute the sum of the first 100 positive integers\nsum(1:100) \n\n[1] 5050\n\n\n\nExplore different object types\nFor this task, we will explore three object types: numeric, character, and logic values.\n\nTask 2-a: Compute a mathematical statement and create a numeric variable\n\n1 + 2\n\n[1] 3\n\n\nWe can assign a variable to this statement by using an assignment operator: &lt;-\n\na &lt;- 1 + 2\n\nWe can also use an equal sign to assign values: \\(=\\)\n\na = 1 + 2\n\nType “a” to show the value of the variable\n\na\n\n[1] 3\n\n\n\nCreate a numeric variable “b” that is the product of “a” and “5”\n\nb = a*5\n\nType “b” in your console to show the product of the two variables\n\nb\n\n[1] 15\n\n\nDivide b by 4\n\nb / 4\n\n[1] 3.75\n\n\nTake the square root of b\n\nsqrt(b)\n\n[1] 3.872983\n\n\n\nCompute the natural log of b\n\nlog(b)\n\n[1] 2.70805\n\n\nCompute the common log of b\n\nlog10(b)\n\n[1] 1.176091\n\n\nFind 1 minus the square root of b\n\n1-sqrt(b)\n\n[1] -2.872983\n\n\n\nAttempt to find the square root of “1 minus the square root of b” - which is a negative value\n\nsqrt(1-b)\n\nWarning in sqrt(1 - b): NaNs produced\n\n\n[1] NaN\n\n\nNaN stands for “Not a number”. This occurs because there is currently no defined value to recognize the square root of negative numbers in R. But we can compute the square root on the absolute value of this difference, if needed.\n\nsqrt(abs(1-b))\n\n[1] 3.741657\n\n\n\nWe can insert longer or more complex mathematical statements too. For example, we can find the absolute value of the sum of -1 and the square root of b cubed and then subtract from that the value of 3 times the square root of b.\nNotice the use of parentheses.\n\nabs(-1+sqrt(b^3)) - 3*(sqrt(b))\n\n[1] 45.4758\n\n\nWe can override the original value of y to match the mathematical statement we generated above.\n\ny &lt;- abs(-1+sqrt(b^3)) - 3*(sqrt(b))\ny\n\n[1] 45.4758\n\n\nWe consider all of the previous objects to be numeric.\n\nWe can also create objects to hold non-numeric values.\nThere are two types of non-numeric values: character values and logic values.\n\nCharacter values\n\ncharacter &lt;- 'some label'\ncharacter\n\n[1] \"some label\"\n\n\nWe can create a character value using the ‘,’ or “,” quotes.\n\ncharacter &lt;- \"some label\"\ncharacter\n\n[1] \"some label\"\n\n\n\n\n\nLogic values\nLogic values can either be TRUE or FALSE\n\nlogic_true &lt;- TRUE\nlogic_false &lt;- FALSE\n\n\nlogic_true\n\n[1] TRUE\n\nlogic_false\n\n[1] FALSE\n\n\nWe can also use T for TRUE and F for FALSE.\n\nlogic_true &lt;- T\nlogic_false &lt;- F\n\n\nlogic_true\n\n[1] TRUE\n\nlogic_false\n\n[1] FALSE",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
     ]
   },
@@ -201,8 +201,41 @@
     "section": "Variables in R",
     "text": "Variables in R\nWe will learn to give a variable (or character) a value.\n\nUse the different assignment operators\n\ny = 2 # the equal sign can be used as an assignment operator\n\ny &lt;-2 # a \"less than\" sign and dash can also be used as an assignment operator\n\ny # R stores all values you assign, so you must \"call\" any variables to see their values\n\n[1] 2\n\n\n\nSet x equal to two added to three\n\nx = 2 + 3\nx\n\n[1] 5\n\n\n\nSet y equal to two minus three\n\ny = 2 - 3\ny\n\n[1] -1\n\n\n\nSet z equal to two times three\n\nz = 2 * 3\nz\n\n[1] 6\n\n\n\nOverwrite the value of y by setting y equal to x divided by z\n\ny = x / z\ny\n\n[1] 0.8333333",
     "crumbs": [
-      "Workshop materials",
+      "Workshop slides",
       "Part 1"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Facilitator",
+    "section": "",
+    "text": "Hi folks! My name is Nathan Alexander, PhD and I am an assistant professor in the Howard University School of Education. At Howard, I direct the Quantitative Histories Workshop, which is a computational curriculum collective and community-centered teaching and learning lab. I will be your facilitator for today’s workshop.\nYou can find out more about me online here.\n\n\n\nWorkshop facilitator: Nathan Alexander, PhD\n\n\nIf you have any questions or want to learn more, contact me via email: nathan[dot]alexander[at]howard[dot]edu.",
+    "crumbs": [
+      "Workshop information",
+      "Facilitator"
+    ]
+  },
+  {
+    "objectID": "parts/part02.html#openalex",
+    "href": "parts/part02.html#openalex",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "OpenAlex",
+    "text": "OpenAlex\nWe will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R from part 1, we’ll start working with the code below:\n\n#install.packages(\"openalexR\")\nlibrary(openalexR)\n\nWarning: package 'openalexR' was built under R version 4.5.2\n\n\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"BlackCrit\", \"youth\"),\n  from_publication_date = \"2026-03-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\nRequesting url:\n&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&sort=cited_by_count%3Adesc&gt;\nℹ Getting 14 pages of results with a total of 2613 records...\n⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s\n\n⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s\n\n⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s\n\n⠼ OpenAlex downloading [7/14] ■■■■■■■■■■■■■■■■                  50% ETA:  9s\n\n⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s\n\n⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s\n\n⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s\n\n⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n\n\n⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s\n\n⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s\n\n⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s\n\n⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s\n\n⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nid\ndisplay_name\nfirst_author\nlast_author\nis_oa\ntop_concepts\n\n\n\n\nW578333627\nYouth Training and the Search for Work\nDenis Gleeson\nNA\nFALSE\nTraining (meteorology), Work (physics)\n\n\nW7133883343\nFaith, flight, and futures: religion and the Japa migration of Nigerian youth\nNtongha Eni Ikpi\nDodeye Uduak Williams\nFALSE\nEthnic group, Immigration, Ethnography\n\n\nW7133782334\nFaith, governance, and exodus: exploring the impact of religion and politics on youth migration in Africa\nDodeye Uduak Williams\nNA\nFALSE\nPolitics, Ethnic group, Immigration\n\n\nW7135378591\nVaping as Captured Homeostasis - Adverse Events, Trauma Response, and the Case for Stewardship in Australian Youth Nicotine Policy\nJohn Richard Smith\nSHAI/HATI\nTRUE\nEnforcement, Harm, Framing (construction)\n\n\nW7134069619\nTransnational youth and social mobility: the role of family financial support in unsettled lives\nAlexandra Lee\nLoretta Baldassar\nTRUE\nSocial support, Remittance, Politics\n\n\nW7133207944\nWithin-Person Association Between Daily Screen Use and Sleep in Youth\nMatthew Bourke\nGeorge Thomas\nFALSE\nBedtime, Sleep (system call), Association (psychology)",
+    "crumbs": [
+      "Workshop slides",
+      "Part 2"
+    ]
+  },
+  {
+    "objectID": "parts/part02.html#web-of-science-wos",
+    "href": "parts/part02.html#web-of-science-wos",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "Web of Science (WoS)",
+    "text": "Web of Science (WoS)\nWe can also use the WoS to conduct a full systematic literature review with the Quanteda package.",
+    "crumbs": [
+      "Workshop slides",
+      "Part 2"
     ]
   }
 ]

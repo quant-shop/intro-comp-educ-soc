@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/data.html</loc>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/data.html</loc>
     <lastmod>2026-04-20T16:37:52.307Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part02.html</loc>
-    <lastmod>2026-04-20T17:58:22.092Z</lastmod>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part02.html</loc>
+    <lastmod>2026-04-20T18:41:51.595Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part02-slides.html</loc>
-    <lastmod>2026-04-20T17:58:22.092Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/computing.html</loc>
-    <lastmod>2026-04-20T17:53:34.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/index.html</loc>
-    <lastmod>2026-04-20T17:49:33.443Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part03-slides.html</loc>
-    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part03.html</loc>
-    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part01-slides.html</loc>
-    <lastmod>2026-04-20T17:50:45.321Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part01.html</loc>
-    <lastmod>2026-04-20T17:50:45.321Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quant-shop.github.io/intro-comp-educ-soc/index.html</loc>
-    <lastmod>2026-04-20T17:49:33.443Z</lastmod>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part02-slides.html</loc>
+    <lastmod>2026-04-20T18:12:02.316Z</lastmod>
   </url>
   <url>
     <loc>https://quant-shop.github.io/intro-comp-educ-soc/computing.html</loc>
     <lastmod>2026-04-20T17:53:34.407Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/index.html</loc>
+    <lastmod>2026-04-20T18:26:23.861Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part03-slides.html</loc>
+    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part03.html</loc>
+    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part01-slides.html</loc>
+    <lastmod>2026-04-20T18:31:40.127Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/parts/part01.html</loc>
+    <lastmod>2026-04-20T18:31:40.127Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quant-shop.github.io/intro-comp-educ-soc/about.html</loc>
+    <lastmod>2026-04-20T18:28:13.846Z</lastmod>
   </url>
 </urlset>

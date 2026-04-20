@@ -1,0 +1,141 @@
+---
+title: "DATA 202 - Bivariate analysis"
+author: "FirstName LastName"
+output: html_document
+editor_options:
+    chunk_output_type: console
+---
+
+```{r setup, include=F}
+knitr:: opts_chunk$set(echo = TRUE)
+```
+
+# Libraries and packages
+
+Load the libraries we needed. Be sure to `install.packages()` where needed.
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+# Bivariate analysis
+
+There are multiple options when conducting a bivariate analysis. In this file, I provide some very basic code to help you get started on your analysis for your paper.
+
+## Load the data from github
+
+We'll use data on the gender pay gap that I have prepared for today's discussion.
+
+```{r}
+pay_gap_data <- read.csv("https://raw.githubusercontent.com/data-202/sp25/refs/heads/master/data/pay_data.csv")
+```
+
+# Numeric variables
+
+## Research question
+
+RQ: What is the relationship between years of experience and annual salary?
+
+### Scatterplot
+
+We'll start with a scatterplot to visualize the data.
+
+```{r}
+# Let's visualize the dat a
+ggplot(pay_gap_data, aes(x = years_experience, y = annual_salary, color = gender)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Years of Experience vs Annual Salary by Gender",
+       x = "Years of Experience", y = "Annual Salary")
+```
+
+### Correlation
+
+We'll then conduct a correlation analysis.
+
+```{r}
+cor.test(pay_gap_data$years_experience, pay_gap_data$annual_salary)
+```
+
+
+### Simple linear regression
+
+Given the nature of our variables, we can run a simple linear regression.
+
+```{r}
+model <- lm(annual_salary ~ years_experience, data = pay_gap_data)
+```
+
+We then want to call a summary of our model.
+
+```{r}
+summary(model)
+```
+
+In a future class session, we'll talk about model specifications and how to apply the tenets of critical quantification. For now, please focus on the code a nd syntax to help you get practice.
+
+# Categorical Variables
+
+Given the categorical variables, we will conduct slightly different tests.
+
+## Research question
+
+RQ: Is there an association between gender and job title?
+
+### Contingency Table: Gender vs Job Title
+
+```{r}
+table(pay_gap_data$gender, pay_gap_data$job_title)
+```
+
+
+### Chi-square test for independence
+
+```{r}
+chisq.test(pay_gap_data$gender, pay_gap_data$job_title)
+```
+
+### Boxplot: Annual Salary by Gender
+
+```{r}
+ggplot(pay_gap_data, aes(x = gender, y = annual_salary, fill = gender)) +
+  geom_boxplot() +
+  labs(title = "Annual Salary Distribution by Gender",
+       x = "Gender", y = "Annual Salary")
+```
+
+# Differences by groupings
+
+When we mix multiple types of variables, recall that there are additional tests that we can use.
+
+## Research Question
+### ANOVA: Annual salary differences among genders
+```{r}
+anova_result <- aov(annual_salary ~ gender, data = pay_gap_data)
+```
+
+```{r}
+summary(anova_result)
+```
+
+### t-test: Salary difference between two genders (e.g., Male vs Female)
+```{r}
+t.test(annual_salary ~ gender, data = pay_gap_data[pay_gap_data$gender %in% c("Male", "Female"),])
+```
+
+### Multiple linear regression: Salary vs experience and Gender
+
+We can also do a multiple linear regression model.
+
+More on this soon.
+
+```{r}
+multi_model <- lm(annual_salary ~ years_experience + gender, data = pay_gap_data)
+```
+
+Then we call a summary of our model.
+
+```{r}
+summary(multi_model)
+```
