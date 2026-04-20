@@ -21,6 +21,48 @@
     "text": "Description\nThis dataset includes: - GPA - Study hours - Demographics"
   },
   {
+    "objectID": "templates/paper-template/paper1 copy.html#research-questions",
+    "href": "templates/paper-template/paper1 copy.html#research-questions",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Research Questions",
+    "text": "Research Questions\nThe research question(s) should close out the introductory section of your paper.\n\nWhat is your first research question?\nWhat is your second research question?"
+  },
+  {
+    "objectID": "templates/paper-template/paper1 copy.html#researcher-positionality",
+    "href": "templates/paper-template/paper1 copy.html#researcher-positionality",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Researcher positionality",
+    "text": "Researcher positionality\nI will add a few notes about why I am interested in this topic, and how my own positionality has situated me to conduct this study."
+  },
+  {
+    "objectID": "templates/paper-template/paper1 copy.html#hypothesis",
+    "href": "templates/paper-template/paper1 copy.html#hypothesis",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\nWhat is the hypothesis for your first research question?\nWhat is the hypothesis for your second research question?"
+  },
+  {
+    "objectID": "templates/paper-template/paper1 copy.html#including-plots",
+    "href": "templates/paper-template/paper1 copy.html#including-plots",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Including Plots",
+    "text": "Including Plots\nYou can also embed plots, for example:"
+  },
+  {
+    "objectID": "templates/paper-template/paper1.html#research-questions",
+    "href": "templates/paper-template/paper1.html#research-questions",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Research Questions",
+    "text": "Research Questions\nThe research question(s) should close out the introductory section of your paper. What is your first research question?\nCastillo & Babb (2024) says this in a quote from their paper."
+  },
+  {
+    "objectID": "templates/paper-template/paper1.html#hypothesis",
+    "href": "templates/paper-template/paper1.html#hypothesis",
+    "title": "Paper 1 Title Goes Here",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\nWhat is the hypothesis for your first research question?\nWhat is the hypothesis for your second research question?"
+  },
+  {
     "objectID": "parts/part02.html",
     "href": "parts/part02.html",
     "title": "Part 2: Conducting a literature scan",
@@ -30,6 +72,42 @@
       "Workshop slides",
       "Part 2"
     ]
+  },
+  {
+    "objectID": "parts/part02.html#openalex",
+    "href": "parts/part02.html#openalex",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "OpenAlex",
+    "text": "OpenAlex\nWe will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R from part 1, we’ll start working with the code below:\n\n#install.packages(\"openalexR\")\nlibrary(openalexR)\n\nWarning: package 'openalexR' was built under R version 4.5.2\n\n\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"BlackCrit\", \"youth\"),\n  from_publication_date = \"2026-03-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\nRequesting url:\n&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&sort=cited_by_count%3Adesc&gt;\nℹ Getting 14 pages of results with a total of 2613 records...\n⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s\n\n⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s\n\n⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s\n\n⠼ OpenAlex downloading [7/14] ■■■■■■■■■■■■■■■■                  50% ETA:  9s\n\n⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s\n\n⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s\n\n⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s\n\n⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n\n\n⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s\n\n⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s\n\n⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s\n\n⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s\n\n⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nid\ndisplay_name\nfirst_author\nlast_author\nis_oa\ntop_concepts\n\n\n\n\nW578333627\nYouth Training and the Search for Work\nDenis Gleeson\nNA\nFALSE\nTraining (meteorology), Work (physics)\n\n\nW7133883343\nFaith, flight, and futures: religion and the Japa migration of Nigerian youth\nNtongha Eni Ikpi\nDodeye Uduak Williams\nFALSE\nEthnic group, Immigration, Ethnography\n\n\nW7133782334\nFaith, governance, and exodus: exploring the impact of religion and politics on youth migration in Africa\nDodeye Uduak Williams\nNA\nFALSE\nPolitics, Ethnic group, Immigration\n\n\nW7135378591\nVaping as Captured Homeostasis - Adverse Events, Trauma Response, and the Case for Stewardship in Australian Youth Nicotine Policy\nJohn Richard Smith\nSHAI/HATI\nTRUE\nEnforcement, Harm, Framing (construction)\n\n\nW7134069619\nTransnational youth and social mobility: the role of family financial support in unsettled lives\nAlexandra Lee\nLoretta Baldassar\nTRUE\nSocial support, Remittance, Politics\n\n\nW7133207944\nWithin-Person Association Between Daily Screen Use and Sleep in Youth\nMatthew Bourke\nGeorge Thomas\nFALSE\nBedtime, Sleep (system call), Association (psychology)",
+    "crumbs": [
+      "Workshop slides",
+      "Part 2"
+    ]
+  },
+  {
+    "objectID": "parts/part02.html#web-of-science-wos",
+    "href": "parts/part02.html#web-of-science-wos",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "Web of Science (WoS)",
+    "text": "Web of Science (WoS)\nWe can also use the WoS to conduct a full systematic literature review with the Quanteda package.",
+    "crumbs": [
+      "Workshop slides",
+      "Part 2"
+    ]
+  },
+  {
+    "objectID": "parts/part02-slides.html#openalex",
+    "href": "parts/part02-slides.html#openalex",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "OpenAlex",
+    "text": "OpenAlex\nWe will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R from part 1, we’ll start working with the code below:\n\n#install.packages(\"openalexR\")\nlibrary(openalexR)\n\nWarning: package 'openalexR' was built under R version 4.5.2\n\n\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"BlackCrit\", \"youth\"),\n  from_publication_date = \"2026-03-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\nRequesting url:\n&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&sort=cited_by_count%3Adesc&gt;\nℹ Getting 14 pages of results with a total of 2613 records...\n⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s\n\n⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s\n\n⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s\n\n⠼ OpenAlex downloading [7/14] ■■■■■■■■■■■■■■■■                  50% ETA:  9s\n\n⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s\n\n⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s\n\n⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s\n\n⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n\n\n⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s\n\n⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s\n\n⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s\n\n⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s\n\n⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nid\ndisplay_name\nfirst_author\nlast_author\nis_oa\ntop_concepts\n\n\n\n\nW578333627\nYouth Training and the Search for Work\nDenis Gleeson\nNA\nFALSE\nTraining (meteorology), Work (physics)\n\n\nW7133883343\nFaith, flight, and futures: religion and the Japa migration of Nigerian youth\nNtongha Eni Ikpi\nDodeye Uduak Williams\nFALSE\nEthnic group, Immigration, Ethnography\n\n\nW7133782334\nFaith, governance, and exodus: exploring the impact of religion and politics on youth migration in Africa\nDodeye Uduak Williams\nNA\nFALSE\nPolitics, Ethnic group, Immigration\n\n\nW7135378591\nVaping as Captured Homeostasis - Adverse Events, Trauma Response, and the Case for Stewardship in Australian Youth Nicotine Policy\nJohn Richard Smith\nSHAI/HATI\nTRUE\nEnforcement, Harm, Framing (construction)\n\n\nW7134069619\nTransnational youth and social mobility: the role of family financial support in unsettled lives\nAlexandra Lee\nLoretta Baldassar\nTRUE\nSocial support, Remittance, Politics\n\n\nW7133207944\nWithin-Person Association Between Daily Screen Use and Sleep in Youth\nMatthew Bourke\nGeorge Thomas\nFALSE\nBedtime, Sleep (system call), Association (psychology)"
+  },
+  {
+    "objectID": "parts/part02-slides.html#web-of-science-wos",
+    "href": "parts/part02-slides.html#web-of-science-wos",
+    "title": "Part 2: Conducting a literature scan",
+    "section": "Web of Science (WoS)",
+    "text": "Web of Science (WoS)\nWe can also use the WoS to conduct a full systematic literature review with the Quanteda package."
   },
   {
     "objectID": "computing.html",
@@ -56,9 +134,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introduction to Computational Studies in Education and the Social Sciences",
+    "title": "Workshop: Introduction to Computational Studies in Education and the Social Sciences",
     "section": "",
-    "text": "Welcome students and colleagues! Thank you for joining us. This site is to support your learning during today’s introduction to Computational Studies in Education and the Social Sciences.\nMy name is Professor Nathan Alexander and I will be your facilitator today.\nComputational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.\nInstead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:\nGiven our time constraints today, we’ll focus on a few key foundations:",
+    "text": "Welcome students and colleagues! Thank you for joining us. This site is to support your learning during today’s introduction to Computational Studies in Education and the Social Sciences.\nMy name is Professor Nathan Alexander and I will be your facilitator today.\nComputational Studies in Education (CSIE) is an interdisciplinary field that uses computational methods — like data analysis, modeling, and machine learning — to study how people learn, behave, and interact in social and educational contexts. At its core, it blends ideas from Education, Social Sciences, and Computer Science.\nInstead of relying only on traditional paper-based methods that focus on small-scale surveys or interviews, this field works with large-scale and complex data for:\nGiven our time constraints today, we’ll focus on a few key foundations.",
     "crumbs": [
       "Workshop information",
       "Home"
@@ -67,7 +145,7 @@
   {
     "objectID": "index.html#schedule",
     "href": "index.html#schedule",
-    "title": "Introduction to Computational Studies in Education and the Social Sciences",
+    "title": "Workshop: Introduction to Computational Studies in Education and the Social Sciences",
     "section": "Schedule",
     "text": "Schedule\n\n\n\nPart\nTopic\nDuration\nTime\n\n\n\n\n\nWelcome & site orientation\n10 minutes\n5:00–5:10 PM\n\n\n1\nGetting started in R and Posit\n30 minutes\n5:10–5:40 PM\n\n\n\nBreak\n5 minutes\n5:40–5:45 PM\n\n\n2\nConducting a literature scan\n15 minutes\n5:45–6:00 PM\n\n\n\nBreak\n5 minutes\n6:00–6:05 PM\n\n\n3\nWorking with large-scale data\n45 minutes\n6:05–6:50 PM\n\n\n\nQ&A\n10 minutes\n6:50–7:00 PM",
     "crumbs": [
@@ -76,14 +154,43 @@
     ]
   },
   {
-    "objectID": "index.html#materials",
-    "href": "index.html#materials",
-    "title": "Introduction to Computational Studies in Education and the Social Sciences",
-    "section": "Materials",
-    "text": "Materials\n\nSlides\nData\nCode templates",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Facilitator",
+    "section": "",
+    "text": "Hi folks! My name is Nathan Alexander, PhD and I am an assistant professor in the Howard University School of Education. At Howard, I direct the Quantitative Histories Workshop, which is a computational curriculum collective and community-centered teaching and learning lab. I will be your facilitator for today’s workshop.\nYou can find out more about me online here.\n\n\n\nWorkshop facilitator: Nathan Alexander, PhD\n\n\nIf you have any questions or want to learn more, contact me via email: nathan[dot]alexander[at]howard[dot]edu.",
     "crumbs": [
       "Workshop information",
-      "Home"
+      "Facilitator"
+    ]
+  },
+  {
+    "objectID": "parts/part03-slides.html#part-3-working-with-data",
+    "href": "parts/part03-slides.html#part-3-working-with-data",
+    "title": "Part 3: Working with large-scale data",
+    "section": "Part 3: Working with Data",
+    "text": "Part 3: Working with Data\nWe’ll start with a guided example using student assessment data.\n\n📊 DC Public Schools Student Assessment Results\n\nStep 1: Load Required Packages\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tibble' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndf &lt;- read_csv(\"../data/DC_Public_Schools_Student_Assessment_Results.csv\")\n\nRows: 189364 Columns: 23\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (18): SCHOOL_YEAR, SCHOOL_WARD, SCHOOL_NAME, LEA_NAME, ASSESSMENT_TYPE, ...\ndbl  (3): OBJECTID, SCHOOL_CODE, LEA_CODE\nlgl  (2): CREATED_DATE, LAST_EDITED_DATE\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# View the first few rows\nhead(df)\n\n# A tibble: 6 × 23\n  OBJECTID SCHOOL_YEAR SCHOOL_WARD SCHOOL_CODE SCHOOL_NAME     LEA_CODE LEA_NAME\n     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;   \n1        1 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n2        2 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n3        3 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n4        4 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n5        5 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n6        6 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n# ℹ 16 more variables: ASSESSMENT_TYPE &lt;chr&gt;, SUBJECT &lt;chr&gt;,\n#   TESTED_GRADE_SUBJECT &lt;chr&gt;, GRADE_OF_ENROLLMENT &lt;chr&gt;, SUBGROUP &lt;chr&gt;,\n#   SUBGROUP_VALUE &lt;chr&gt;, PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt;,\n#   PERCENT_LEVEL_3_ &lt;chr&gt;, PERCENT_LEVEL_1 &lt;chr&gt;, PERCENT_LEVEL_2 &lt;chr&gt;,\n#   PERCENT_LEVEL_3 &lt;chr&gt;, PERCENT_LEVEL_4 &lt;chr&gt;, PERCENT_LEVEL_5 &lt;chr&gt;,\n#   TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt;, CREATED_DATE &lt;lgl&gt;,\n#   LAST_EDITED_DATE &lt;lgl&gt;\n\n# Check structure\nglimpse(df)\n\nRows: 189,364\nColumns: 23\n$ OBJECTID                       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …\n$ SCHOOL_YEAR                    &lt;chr&gt; \"2014-15\", \"2014-15\", \"2014-15\", \"2014-…\n$ SCHOOL_WARD                    &lt;chr&gt; \"Ward 8\", \"Ward 8\", \"Ward 8\", \"Ward 8\",…\n$ SCHOOL_CODE                    &lt;dbl&gt; 217, 217, 217, 217, 217, 217, 217, 217,…\n$ SCHOOL_NAME                    &lt;chr&gt; \"Achievement Preparatory Academy PCS Wa…\n$ LEA_CODE                       &lt;dbl&gt; 155, 155, 155, 155, 155, 155, 155, 155,…\n$ LEA_NAME                       &lt;chr&gt; \"Achievement Preparatory Academy PCS\", …\n$ ASSESSMENT_TYPE                &lt;chr&gt; \"PARCC\", \"PARCC\", \"PARCC\", \"PARCC\", \"PA…\n$ SUBJECT                        &lt;chr&gt; \"Math\", \"Math\", \"Math\", \"Math\", \"Math\",…\n$ TESTED_GRADE_SUBJECT           &lt;chr&gt; \"Grade 3\", \"Grade 3\", \"Grade 3\", \"Grade…\n$ GRADE_OF_ENROLLMENT            &lt;chr&gt; \"All\", \"All\", \"All\", \"All\", \"All\", \"All…\n$ SUBGROUP                       &lt;chr&gt; \"Gender\", \"Gender\", \"Race by Gender\", \"…\n$ SUBGROUP_VALUE                 &lt;chr&gt; \"Female\", \"Male\", \"Female-Black/African…\n$ PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_3_               &lt;chr&gt; \"n&lt;25\", \"60.6%\", \"n&lt;25\", \"60.6%\", \"71.4…\n$ PERCENT_LEVEL_1                &lt;chr&gt; \"n&lt;25\", \"15.2%\", \"n&lt;25\", \"15.2%\", \"10.7…\n$ PERCENT_LEVEL_2                &lt;chr&gt; \"n&lt;25\", \"24.2%\", \"n&lt;25\", \"24.2%\", \"17.9…\n$ PERCENT_LEVEL_3                &lt;chr&gt; \"n&lt;25\", \"33.3%\", \"n&lt;25\", \"33.3%\", \"44.6…\n$ PERCENT_LEVEL_4                &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_5                &lt;chr&gt; \"n&lt;25\", \"0.0%\", \"n&lt;25\", \"0.0%\", \"0.0%\",…\n$ TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt; \"n&lt;25\", \"33\", \"n&lt;25\", \"33\", \"56\", \"n&lt;25…\n$ CREATED_DATE                   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ LAST_EDITED_DATE               &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n\n# Summary statistics\nsummary(df)\n\n    OBJECTID      SCHOOL_YEAR        SCHOOL_WARD         SCHOOL_CODE    \n Min.   :     1   Length:189364      Length:189364      Min.   : 101.0  \n 1st Qu.: 47342   Class :character   Class :character   1st Qu.: 214.0  \n Median : 94682   Mode  :character   Mode  :character   Median : 300.0  \n Mean   : 94682                                         Mean   : 480.7  \n 3rd Qu.:142023                                         3rd Qu.: 416.0  \n Max.   :189364                                         Max.   :3071.0  \n SCHOOL_NAME           LEA_CODE         LEA_NAME         ASSESSMENT_TYPE   \n Length:189364      Min.   :   1.00   Length:189364      Length:189364     \n Class :character   1st Qu.:   1.00   Class :character   Class :character  \n Mode  :character   Median :   1.00   Mode  :character   Mode  :character  \n                    Mean   :  64.89                                        \n                    3rd Qu.: 129.00                                        \n                    Max.   :4002.00                                        \n   SUBJECT          TESTED_GRADE_SUBJECT GRADE_OF_ENROLLMENT   SUBGROUP        \n Length:189364      Length:189364        Length:189364       Length:189364     \n Class :character   Class :character     Class :character    Class :character  \n Mode  :character   Mode  :character     Mode  :character    Mode  :character  \n                                                                               \n                                                                               \n                                                                               \n SUBGROUP_VALUE     PERCENT_MEETING_OR_EXCEEDING_E PERCENT_LEVEL_3_  \n Length:189364      Length:189364                  Length:189364     \n Class :character   Class :character               Class :character  \n Mode  :character   Mode  :character               Mode  :character  \n                                                                     \n                                                                     \n                                                                     \n PERCENT_LEVEL_1    PERCENT_LEVEL_2    PERCENT_LEVEL_3    PERCENT_LEVEL_4   \n Length:189364      Length:189364      Length:189364      Length:189364     \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n PERCENT_LEVEL_5    TOTAL_NUMBER_VALID_TEST_TAKERS CREATED_DATE  \n Length:189364      Length:189364                  Mode:logical  \n Class :character   Class :character               NA's:189364   \n Mode  :character   Mode  :character                             \n                                                                 \n                                                                 \n                                                                 \n LAST_EDITED_DATE\n Mode:logical    \n NA's:189364"
+  },
+  {
+    "objectID": "parts/part03.html",
+    "href": "parts/part03.html",
+    "title": "Part 3: Working with large-scale data",
+    "section": "",
+    "text": "We’ll start with a guided example using student assessment data.\n\nDC Public Schools Student Assessment Results\n\n\n\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"../data/DC_Public_Schools_Student_Assessment_Results.csv\")\n\n# View the first few rows\nhead(df)\n\n# A tibble: 6 × 23\n  OBJECTID SCHOOL_YEAR SCHOOL_WARD SCHOOL_CODE SCHOOL_NAME     LEA_CODE LEA_NAME\n     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;   \n1        1 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n2        2 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n3        3 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n4        4 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n5        5 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n6        6 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n# ℹ 16 more variables: ASSESSMENT_TYPE &lt;chr&gt;, SUBJECT &lt;chr&gt;,\n#   TESTED_GRADE_SUBJECT &lt;chr&gt;, GRADE_OF_ENROLLMENT &lt;chr&gt;, SUBGROUP &lt;chr&gt;,\n#   SUBGROUP_VALUE &lt;chr&gt;, PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt;,\n#   PERCENT_LEVEL_3_ &lt;chr&gt;, PERCENT_LEVEL_1 &lt;chr&gt;, PERCENT_LEVEL_2 &lt;chr&gt;,\n#   PERCENT_LEVEL_3 &lt;chr&gt;, PERCENT_LEVEL_4 &lt;chr&gt;, PERCENT_LEVEL_5 &lt;chr&gt;,\n#   TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt;, CREATED_DATE &lt;lgl&gt;,\n#   LAST_EDITED_DATE &lt;lgl&gt;\n\n# Check structure\nglimpse(df)\n\nRows: 189,364\nColumns: 23\n$ OBJECTID                       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …\n$ SCHOOL_YEAR                    &lt;chr&gt; \"2014-15\", \"2014-15\", \"2014-15\", \"2014-…\n$ SCHOOL_WARD                    &lt;chr&gt; \"Ward 8\", \"Ward 8\", \"Ward 8\", \"Ward 8\",…\n$ SCHOOL_CODE                    &lt;dbl&gt; 217, 217, 217, 217, 217, 217, 217, 217,…\n$ SCHOOL_NAME                    &lt;chr&gt; \"Achievement Preparatory Academy PCS Wa…\n$ LEA_CODE                       &lt;dbl&gt; 155, 155, 155, 155, 155, 155, 155, 155,…\n$ LEA_NAME                       &lt;chr&gt; \"Achievement Preparatory Academy PCS\", …\n$ ASSESSMENT_TYPE                &lt;chr&gt; \"PARCC\", \"PARCC\", \"PARCC\", \"PARCC\", \"PA…\n$ SUBJECT                        &lt;chr&gt; \"Math\", \"Math\", \"Math\", \"Math\", \"Math\",…\n$ TESTED_GRADE_SUBJECT           &lt;chr&gt; \"Grade 3\", \"Grade 3\", \"Grade 3\", \"Grade…\n$ GRADE_OF_ENROLLMENT            &lt;chr&gt; \"All\", \"All\", \"All\", \"All\", \"All\", \"All…\n$ SUBGROUP                       &lt;chr&gt; \"Gender\", \"Gender\", \"Race by Gender\", \"…\n$ SUBGROUP_VALUE                 &lt;chr&gt; \"Female\", \"Male\", \"Female-Black/African…\n$ PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_3_               &lt;chr&gt; \"n&lt;25\", \"60.6%\", \"n&lt;25\", \"60.6%\", \"71.4…\n$ PERCENT_LEVEL_1                &lt;chr&gt; \"n&lt;25\", \"15.2%\", \"n&lt;25\", \"15.2%\", \"10.7…\n$ PERCENT_LEVEL_2                &lt;chr&gt; \"n&lt;25\", \"24.2%\", \"n&lt;25\", \"24.2%\", \"17.9…\n$ PERCENT_LEVEL_3                &lt;chr&gt; \"n&lt;25\", \"33.3%\", \"n&lt;25\", \"33.3%\", \"44.6…\n$ PERCENT_LEVEL_4                &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_5                &lt;chr&gt; \"n&lt;25\", \"0.0%\", \"n&lt;25\", \"0.0%\", \"0.0%\",…\n$ TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt; \"n&lt;25\", \"33\", \"n&lt;25\", \"33\", \"56\", \"n&lt;25…\n$ CREATED_DATE                   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ LAST_EDITED_DATE               &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n\n# Summary statistics\nsummary(df)\n\n    OBJECTID      SCHOOL_YEAR        SCHOOL_WARD         SCHOOL_CODE    \n Min.   :     1   Length:189364      Length:189364      Min.   : 101.0  \n 1st Qu.: 47342   Class :character   Class :character   1st Qu.: 214.0  \n Median : 94682   Mode  :character   Mode  :character   Median : 300.0  \n Mean   : 94682                                         Mean   : 480.7  \n 3rd Qu.:142023                                         3rd Qu.: 416.0  \n Max.   :189364                                         Max.   :3071.0  \n SCHOOL_NAME           LEA_CODE         LEA_NAME         ASSESSMENT_TYPE   \n Length:189364      Min.   :   1.00   Length:189364      Length:189364     \n Class :character   1st Qu.:   1.00   Class :character   Class :character  \n Mode  :character   Median :   1.00   Mode  :character   Mode  :character  \n                    Mean   :  64.89                                        \n                    3rd Qu.: 129.00                                        \n                    Max.   :4002.00                                        \n   SUBJECT          TESTED_GRADE_SUBJECT GRADE_OF_ENROLLMENT   SUBGROUP        \n Length:189364      Length:189364        Length:189364       Length:189364     \n Class :character   Class :character     Class :character    Class :character  \n Mode  :character   Mode  :character     Mode  :character    Mode  :character  \n                                                                               \n                                                                               \n                                                                               \n SUBGROUP_VALUE     PERCENT_MEETING_OR_EXCEEDING_E PERCENT_LEVEL_3_  \n Length:189364      Length:189364                  Length:189364     \n Class :character   Class :character               Class :character  \n Mode  :character   Mode  :character               Mode  :character  \n                                                                     \n                                                                     \n                                                                     \n PERCENT_LEVEL_1    PERCENT_LEVEL_2    PERCENT_LEVEL_3    PERCENT_LEVEL_4   \n Length:189364      Length:189364      Length:189364      Length:189364     \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n PERCENT_LEVEL_5    TOTAL_NUMBER_VALID_TEST_TAKERS CREATED_DATE  \n Length:189364      Length:189364                  Mode:logical  \n Class :character   Class :character               NA's:189364   \n Mode  :character   Mode  :character                             \n                                                                 \n                                                                 \n                                                                 \n LAST_EDITED_DATE\n Mode:logical    \n NA's:189364",
+    "crumbs": [
+      "Workshop slides",
+      "Part 3"
+    ]
+  },
+  {
+    "objectID": "parts/part03.html#part-3-working-with-data",
+    "href": "parts/part03.html#part-3-working-with-data",
+    "title": "Part 3: Working with large-scale data",
+    "section": "",
+    "text": "We’ll start with a guided example using student assessment data.\n\nDC Public Schools Student Assessment Results\n\n\n\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"../data/DC_Public_Schools_Student_Assessment_Results.csv\")\n\n# View the first few rows\nhead(df)\n\n# A tibble: 6 × 23\n  OBJECTID SCHOOL_YEAR SCHOOL_WARD SCHOOL_CODE SCHOOL_NAME     LEA_CODE LEA_NAME\n     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;   \n1        1 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n2        2 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n3        3 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n4        4 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n5        5 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n6        6 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…\n# ℹ 16 more variables: ASSESSMENT_TYPE &lt;chr&gt;, SUBJECT &lt;chr&gt;,\n#   TESTED_GRADE_SUBJECT &lt;chr&gt;, GRADE_OF_ENROLLMENT &lt;chr&gt;, SUBGROUP &lt;chr&gt;,\n#   SUBGROUP_VALUE &lt;chr&gt;, PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt;,\n#   PERCENT_LEVEL_3_ &lt;chr&gt;, PERCENT_LEVEL_1 &lt;chr&gt;, PERCENT_LEVEL_2 &lt;chr&gt;,\n#   PERCENT_LEVEL_3 &lt;chr&gt;, PERCENT_LEVEL_4 &lt;chr&gt;, PERCENT_LEVEL_5 &lt;chr&gt;,\n#   TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt;, CREATED_DATE &lt;lgl&gt;,\n#   LAST_EDITED_DATE &lt;lgl&gt;\n\n# Check structure\nglimpse(df)\n\nRows: 189,364\nColumns: 23\n$ OBJECTID                       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …\n$ SCHOOL_YEAR                    &lt;chr&gt; \"2014-15\", \"2014-15\", \"2014-15\", \"2014-…\n$ SCHOOL_WARD                    &lt;chr&gt; \"Ward 8\", \"Ward 8\", \"Ward 8\", \"Ward 8\",…\n$ SCHOOL_CODE                    &lt;dbl&gt; 217, 217, 217, 217, 217, 217, 217, 217,…\n$ SCHOOL_NAME                    &lt;chr&gt; \"Achievement Preparatory Academy PCS Wa…\n$ LEA_CODE                       &lt;dbl&gt; 155, 155, 155, 155, 155, 155, 155, 155,…\n$ LEA_NAME                       &lt;chr&gt; \"Achievement Preparatory Academy PCS\", …\n$ ASSESSMENT_TYPE                &lt;chr&gt; \"PARCC\", \"PARCC\", \"PARCC\", \"PARCC\", \"PA…\n$ SUBJECT                        &lt;chr&gt; \"Math\", \"Math\", \"Math\", \"Math\", \"Math\",…\n$ TESTED_GRADE_SUBJECT           &lt;chr&gt; \"Grade 3\", \"Grade 3\", \"Grade 3\", \"Grade…\n$ GRADE_OF_ENROLLMENT            &lt;chr&gt; \"All\", \"All\", \"All\", \"All\", \"All\", \"All…\n$ SUBGROUP                       &lt;chr&gt; \"Gender\", \"Gender\", \"Race by Gender\", \"…\n$ SUBGROUP_VALUE                 &lt;chr&gt; \"Female\", \"Male\", \"Female-Black/African…\n$ PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_3_               &lt;chr&gt; \"n&lt;25\", \"60.6%\", \"n&lt;25\", \"60.6%\", \"71.4…\n$ PERCENT_LEVEL_1                &lt;chr&gt; \"n&lt;25\", \"15.2%\", \"n&lt;25\", \"15.2%\", \"10.7…\n$ PERCENT_LEVEL_2                &lt;chr&gt; \"n&lt;25\", \"24.2%\", \"n&lt;25\", \"24.2%\", \"17.9…\n$ PERCENT_LEVEL_3                &lt;chr&gt; \"n&lt;25\", \"33.3%\", \"n&lt;25\", \"33.3%\", \"44.6…\n$ PERCENT_LEVEL_4                &lt;chr&gt; \"n&lt;25\", \"27.3%\", \"n&lt;25\", \"27.3%\", \"26.8…\n$ PERCENT_LEVEL_5                &lt;chr&gt; \"n&lt;25\", \"0.0%\", \"n&lt;25\", \"0.0%\", \"0.0%\",…\n$ TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt; \"n&lt;25\", \"33\", \"n&lt;25\", \"33\", \"56\", \"n&lt;25…\n$ CREATED_DATE                   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ LAST_EDITED_DATE               &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n\n# Summary statistics\nsummary(df)\n\n    OBJECTID      SCHOOL_YEAR        SCHOOL_WARD         SCHOOL_CODE    \n Min.   :     1   Length:189364      Length:189364      Min.   : 101.0  \n 1st Qu.: 47342   Class :character   Class :character   1st Qu.: 214.0  \n Median : 94682   Mode  :character   Mode  :character   Median : 300.0  \n Mean   : 94682                                         Mean   : 480.7  \n 3rd Qu.:142023                                         3rd Qu.: 416.0  \n Max.   :189364                                         Max.   :3071.0  \n SCHOOL_NAME           LEA_CODE         LEA_NAME         ASSESSMENT_TYPE   \n Length:189364      Min.   :   1.00   Length:189364      Length:189364     \n Class :character   1st Qu.:   1.00   Class :character   Class :character  \n Mode  :character   Median :   1.00   Mode  :character   Mode  :character  \n                    Mean   :  64.89                                        \n                    3rd Qu.: 129.00                                        \n                    Max.   :4002.00                                        \n   SUBJECT          TESTED_GRADE_SUBJECT GRADE_OF_ENROLLMENT   SUBGROUP        \n Length:189364      Length:189364        Length:189364       Length:189364     \n Class :character   Class :character     Class :character    Class :character  \n Mode  :character   Mode  :character     Mode  :character    Mode  :character  \n                                                                               \n                                                                               \n                                                                               \n SUBGROUP_VALUE     PERCENT_MEETING_OR_EXCEEDING_E PERCENT_LEVEL_3_  \n Length:189364      Length:189364                  Length:189364     \n Class :character   Class :character               Class :character  \n Mode  :character   Mode  :character               Mode  :character  \n                                                                     \n                                                                     \n                                                                     \n PERCENT_LEVEL_1    PERCENT_LEVEL_2    PERCENT_LEVEL_3    PERCENT_LEVEL_4   \n Length:189364      Length:189364      Length:189364      Length:189364     \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n PERCENT_LEVEL_5    TOTAL_NUMBER_VALID_TEST_TAKERS CREATED_DATE  \n Length:189364      Length:189364                  Mode:logical  \n Class :character   Class :character               NA's:189364   \n Mode  :character   Mode  :character                             \n                                                                 \n                                                                 \n                                                                 \n LAST_EDITED_DATE\n Mode:logical    \n NA's:189364",
+    "crumbs": [
+      "Workshop slides",
+      "Part 3"
     ]
   },
   {
@@ -92,13 +199,6 @@
     "title": "Part 1: Getting started",
     "section": "Using Posit Cloud",
     "text": "Using Posit Cloud\nPosit Cloud is a web-based platform that allows users to perform data science tasks directly in their browser. It provides a cloud-based environment similar to the traditional RStudio integrated development environment (IDE), eliminating the need for local software installation and maintenance. Users can create projects, share work with collaborators, and access features like interactive notebooks. Posit Cloud offers various plans, including a free option for casual use and premium plans for professionals, instructors, and organizations.\nYou can access the Posit Cloud here."
-  },
-  {
-    "objectID": "parts/part01-slides.html#downloading-r-and-rstudio",
-    "href": "parts/part01-slides.html#downloading-r-and-rstudio",
-    "title": "Part 1: Getting started",
-    "section": "Downloading R and RStudio",
-    "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow the steps below in order.\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality."
   },
   {
     "objectID": "parts/part01-slides.html#directories",
@@ -151,17 +251,6 @@
     ]
   },
   {
-    "objectID": "parts/part01.html#downloading-r-and-rstudio",
-    "href": "parts/part01.html#downloading-r-and-rstudio",
-    "title": "Part 1: Getting started",
-    "section": "Downloading R and RStudio",
-    "text": "Downloading R and RStudio\nIf you’d like, you can install base R and RStudio which offers several advantages over Posit Cloud, especially for those who need offline access or prefer to work with local files and resources directly on their computer. This can be especially beneficial for managing large datasets or complex project structures, as well as for users who frequently work in areas with limited internet connectivity.\nFollow the steps below in order.\n\nDownload and Install R\n– Visit the Comprehensive R Archive Network (CRAN) website.\n\nSelect the appropriate option for your operating system (e.g., Windows, macOS, or Linux).\n\n– Click “Download R” and follow the installation prompts.\n\nFor Windows: Choose “Install R for the first time” and run the downloaded .exe file.\nFor macOS: Download the .pkg file and follow the instructions.\nFor Linux: Follow system-specific installation steps or build from source if necessary.\n\n– Leave default options selected during installation unless customization is needed.\n\n\nDownload and Install RStudio\n– Go to the official RStudio website.\n\nNavigate to the “Download RStudio Desktop” section.\n\n– Select the download button that corresponds to your operating system.\n– Run the downloaded installer:\n\nFor Windows: Execute the .exe file and follow the setup wizard.\nFor macOS: Open the .dmg file, drag the RStudio icon to Applications, and eject the disk image.\nFor Linux: Install using system tools based on your Linux distribution.\n\n– Complete installation by leaving default options selected unless customization is required.\n\n\nVerify Installation\n– Open RStudio after installation.\n– Ensure it detects your installed version of R automatically during setup.\n– Run a the command print(\"Hello, World!\") to confirm functionality.",
-    "crumbs": [
-      "Workshop slides",
-      "Part 1"
-    ]
-  },
-  {
     "objectID": "parts/part01.html#directories",
     "href": "parts/part01.html#directories",
     "title": "Part 1: Getting started",
@@ -206,36 +295,74 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the Facilitator",
+    "objectID": "templates/paper-template/paper2.html#research-questions",
+    "href": "templates/paper-template/paper2.html#research-questions",
+    "title": "Paper 2 Title Goes Here",
+    "section": "Research Questions",
+    "text": "Research Questions\nThe research question(s) should close out the introductory section of your paper. What is your first research question?\nCastillo & Babb (2024) says this in a quote from their paper."
+  },
+  {
+    "objectID": "templates/paper-template/paper2.html#hypothesis",
+    "href": "templates/paper-template/paper2.html#hypothesis",
+    "title": "Paper 2 Title Goes Here",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\nWhat is the hypothesis for your first research question?\nWhat is the hypothesis for your second research question?"
+  },
+  {
+    "objectID": "templates/bivariate.html",
+    "href": "templates/bivariate.html",
+    "title": "DATA 202 - Bivariate analysis",
     "section": "",
-    "text": "Hi folks! My name is Nathan Alexander, PhD and I am an assistant professor in the Howard University School of Education. At Howard, I direct the Quantitative Histories Workshop, which is a computational curriculum collective and community-centered teaching and learning lab. I will be your facilitator for today’s workshop.\nYou can find out more about me online here.\n\n\n\nWorkshop facilitator: Nathan Alexander, PhD\n\n\nIf you have any questions or want to learn more, contact me via email: nathan[dot]alexander[at]howard[dot]edu.",
+    "text": "Load the libraries we needed. Be sure to install.packages() where needed.\n\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+  },
+  {
+    "objectID": "templates/bivariate.html#load-the-data-from-github",
+    "href": "templates/bivariate.html#load-the-data-from-github",
+    "title": "DATA 202 - Bivariate analysis",
+    "section": "Load the data from github",
+    "text": "Load the data from github\nWe’ll use data on the gender pay gap that I have prepared for today’s discussion.\n\npay_gap_data &lt;- read.csv(\"https://raw.githubusercontent.com/data-202/sp25/refs/heads/master/data/pay_data.csv\")"
+  },
+  {
+    "objectID": "templates/bivariate.html#research-question",
+    "href": "templates/bivariate.html#research-question",
+    "title": "DATA 202 - Bivariate analysis",
+    "section": "Research question",
+    "text": "Research question\nRQ: What is the relationship between years of experience and annual salary?\n\nScatterplot\nWe’ll start with a scatterplot to visualize the data.\n\n# Let's visualize the dat a\nggplot(pay_gap_data, aes(x = years_experience, y = annual_salary, color = gender)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Years of Experience vs Annual Salary by Gender\",\n       x = \"Years of Experience\", y = \"Annual Salary\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nCorrelation\nWe’ll then conduct a correlation analysis.\n\ncor.test(pay_gap_data$years_experience, pay_gap_data$annual_salary)\n\n\n    Pearson's product-moment correlation\n\ndata:  pay_gap_data$years_experience and pay_gap_data$annual_salary\nt = 15.413, df = 98, p-value &lt; 2.2e-16\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.7726828 0.8906291\nsample estimates:\n      cor \n0.8414022 \n\n\n\n\nSimple linear regression\nGiven the nature of our variables, we can run a simple linear regression.\n\nmodel &lt;- lm(annual_salary ~ years_experience, data = pay_gap_data)\n\nWe then want to call a summary of our model.\n\nsummary(model)\n\n\nCall:\nlm(formula = annual_salary ~ years_experience, data = pay_gap_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-18654.6  -6516.7    -72.8   6192.4  24311.7 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       45733.6     1765.1   25.91   &lt;2e-16 ***\nyears_experience   1932.6      125.4   15.41   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9339 on 98 degrees of freedom\nMultiple R-squared:  0.708, Adjusted R-squared:  0.705 \nF-statistic: 237.6 on 1 and 98 DF,  p-value: &lt; 2.2e-16\n\n\nIn a future class session, we’ll talk about model specifications and how to apply the tenets of critical quantification. For now, please focus on the code a nd syntax to help you get practice."
+  },
+  {
+    "objectID": "templates/bivariate.html#research-question-1",
+    "href": "templates/bivariate.html#research-question-1",
+    "title": "DATA 202 - Bivariate analysis",
+    "section": "Research question",
+    "text": "Research question\nRQ: Is there an association between gender and job title?\n\nContingency Table: Gender vs Job Title\n\ntable(pay_gap_data$gender, pay_gap_data$job_title)\n\n            \n             Biologist Chemist Data Scientist Other Software Engineer\n  Female             8       7              6    10                 6\n  Male              10      12             13    12                 9\n  Non-binary         2       0              0     1                 4\n\n\n\n\nChi-square test for independence\n\nchisq.test(pay_gap_data$gender, pay_gap_data$job_title)\n\nWarning in chisq.test(pay_gap_data$gender, pay_gap_data$job_title): Chi-squared\napproximation may be incorrect\n\n\n\n    Pearson's Chi-squared test\n\ndata:  pay_gap_data$gender and pay_gap_data$job_title\nX-squared = 10.259, df = 8, p-value = 0.2473\n\n\n\n\nBoxplot: Annual Salary by Gender\n\nggplot(pay_gap_data, aes(x = gender, y = annual_salary, fill = gender)) +\n  geom_boxplot() +\n  labs(title = \"Annual Salary Distribution by Gender\",\n       x = \"Gender\", y = \"Annual Salary\")"
+  },
+  {
+    "objectID": "templates/bivariate.html#research-question-2",
+    "href": "templates/bivariate.html#research-question-2",
+    "title": "DATA 202 - Bivariate analysis",
+    "section": "Research Question",
+    "text": "Research Question\n\nANOVA: Annual salary differences among genders\n\nanova_result &lt;- aov(annual_salary ~ gender, data = pay_gap_data)\n\n\nsummary(anova_result)\n\n            Df    Sum Sq   Mean Sq F value   Pr(&gt;F)    \ngender       2 5.462e+09 2.731e+09   11.13 4.46e-05 ***\nResiduals   97 2.380e+10 2.454e+08                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\n\nt-test: Salary difference between two genders (e.g., Male vs Female)\n\nt.test(annual_salary ~ gender, data = pay_gap_data[pay_gap_data$gender %in% c(\"Male\", \"Female\"),])\n\n\n    Welch Two Sample t-test\n\ndata:  annual_salary by gender\nt = -4.7815, df = 84.835, p-value = 7.246e-06\nalternative hypothesis: true difference in means between group Female and group Male is not equal to 0\n95 percent confidence interval:\n -21961.12  -9061.08\nsample estimates:\nmean in group Female   mean in group Male \n            59756.76             75267.86 \n\n\n\n\nMultiple linear regression: Salary vs experience and Gender\nWe can also do a multiple linear regression model.\nMore on this soon.\n\nmulti_model &lt;- lm(annual_salary ~ years_experience + gender, data = pay_gap_data)\n\nThen we call a summary of our model.\n\nsummary(multi_model)\n\n\nCall:\nlm(formula = annual_salary ~ years_experience + gender, data = pay_gap_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-12628.5  -4703.1   -528.8   3620.1  19084.8 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       38180.5     1521.7  25.091  &lt; 2e-16 ***\nyears_experience   1878.4       90.8  20.688  &lt; 2e-16 ***\ngenderMale        13724.7     1430.6   9.594 1.11e-15 ***\ngenderNon-binary   7346.5     2779.7   2.643   0.0096 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6740 on 96 degrees of freedom\nMultiple R-squared:  0.851, Adjusted R-squared:  0.8463 \nF-statistic: 182.7 on 3 and 96 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "index.html#recommended-readings",
+    "href": "index.html#recommended-readings",
+    "title": "Workshop: Introduction to Computational Studies in Education and the Social Sciences",
+    "section": "Recommended readings",
+    "text": "Recommended readings\nAlexander, N., Jang, H., Jackson, L., Davis, K., Ndiritu, M. (2025). Orientation for Software Carpentries Workshop with R. RPubs. https://rpubs.com/professornaite/orientation-march-17-2025\nBaumer, B. S., Kaplan, D. T., & Horton, N. J. (2017). Modern data science with R. Chapman and Hall/CRC.\nGrolemund, G., & Wickham, H. (2017). R for data science: Import, tidy, transform, visualize, and model data. O’Reilly Media. https://r4ds.had.co.nz/\nKnaflic, C. N. (2015). Storytelling with data: A data visualization guide for business professionals. Wiley.\nPeng, R. D. (2016). R programming for data science. Leanpub. https://bookdown.org/rdpeng/rprogdatascience/\nRStudio Education (n.d.). Learning R for Beginners. Online. https://education.rstudio.com/learn/beginner/\nWickham, H. (2019). Advanced R (2nd ed.). Chapman and Hall/CRC. https://adv-r.hadley.nz/",
     "crumbs": [
       "Workshop information",
-      "Facilitator"
+      "Home"
     ]
   },
   {
-    "objectID": "parts/part02.html#openalex",
-    "href": "parts/part02.html#openalex",
-    "title": "Part 2: Conducting a literature scan",
-    "section": "OpenAlex",
-    "text": "OpenAlex\nWe will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R from part 1, we’ll start working with the code below:\n\n#install.packages(\"openalexR\")\nlibrary(openalexR)\n\nWarning: package 'openalexR' was built under R version 4.5.2\n\n\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"BlackCrit\", \"youth\"),\n  from_publication_date = \"2026-03-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\nRequesting url:\n&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&sort=cited_by_count%3Adesc&gt;\nℹ Getting 14 pages of results with a total of 2613 records...\n⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s\n\n⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s\n\n⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s\n\n⠼ OpenAlex downloading [7/14] ■■■■■■■■■■■■■■■■                  50% ETA:  9s\n\n⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s\n\n⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s\n\n⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s\n\n⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n\n\n⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s\n\n⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s\n\n⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s\n\n⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s\n\n⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nid\ndisplay_name\nfirst_author\nlast_author\nis_oa\ntop_concepts\n\n\n\n\nW578333627\nYouth Training and the Search for Work\nDenis Gleeson\nNA\nFALSE\nTraining (meteorology), Work (physics)\n\n\nW7133883343\nFaith, flight, and futures: religion and the Japa migration of Nigerian youth\nNtongha Eni Ikpi\nDodeye Uduak Williams\nFALSE\nEthnic group, Immigration, Ethnography\n\n\nW7133782334\nFaith, governance, and exodus: exploring the impact of religion and politics on youth migration in Africa\nDodeye Uduak Williams\nNA\nFALSE\nPolitics, Ethnic group, Immigration\n\n\nW7135378591\nVaping as Captured Homeostasis - Adverse Events, Trauma Response, and the Case for Stewardship in Australian Youth Nicotine Policy\nJohn Richard Smith\nSHAI/HATI\nTRUE\nEnforcement, Harm, Framing (construction)\n\n\nW7134069619\nTransnational youth and social mobility: the role of family financial support in unsettled lives\nAlexandra Lee\nLoretta Baldassar\nTRUE\nSocial support, Remittance, Politics\n\n\nW7133207944\nWithin-Person Association Between Daily Screen Use and Sleep in Youth\nMatthew Bourke\nGeorge Thomas\nFALSE\nBedtime, Sleep (system call), Association (psychology)",
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Workshop: Introduction to Computational Studies in Education and the Social Sciences",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this workshop, participants will be able to:\n\nPerform basic data analysis workflows in R using real-world educational and social science datasets\n\nImport, clean, and visualize data using tidyverse tools\n\nProduce reproducible reports using R Markdown (Quarto)\n\nFormulate and interpret equity-focused research questions using data\n\nExtend these methods to support independent research and analysis",
     "crumbs": [
-      "Workshop slides",
-      "Part 2"
-    ]
-  },
-  {
-    "objectID": "parts/part02.html#web-of-science-wos",
-    "href": "parts/part02.html#web-of-science-wos",
-    "title": "Part 2: Conducting a literature scan",
-    "section": "Web of Science (WoS)",
-    "text": "Web of Science (WoS)\nWe can also use the WoS to conduct a full systematic literature review with the Quanteda package.",
-    "crumbs": [
-      "Workshop slides",
-      "Part 2"
+      "Workshop information",
+      "Home"
     ]
   }
 ]

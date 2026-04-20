@@ -1,5 +1,9 @@
 ---
-title: "Introduction to Computational Studies in Education and the Social Sciences"
+title: "Workshop: Introduction to Computational Studies in Education and the Social Sciences"
+author: "Nathan Alexander, PhD"
+institute: 
+  - "School of Education"
+  - "Center for Applied Data Science and Analytics"
 ---
 
 Welcome students and colleagues! Thank you for joining us. This site is to support your learning during today's introduction to *Computational Studies in Education and the Social Sciences*. 
@@ -14,7 +18,17 @@ Instead of relying only on traditional paper-based methods that focus on small-s
 - Studying social behavior through social media or digital interactions
 - Modeling how ideas spread in classrooms or communities
 
-Given our time constraints today, we'll focus on a few key foundations:
+Given our time constraints today, we'll focus on a few key foundations.
+
+## Learning Outcomes
+
+By the end of this workshop, participants will be able to:
+
+- Perform basic data analysis workflows in R using real-world educational and social science datasets  
+- Import, clean, and visualize data using `tidyverse` tools  
+- Produce reproducible reports using R Markdown (Quarto)  
+- Formulate and interpret equity-focused research questions using data  
+- Extend these methods to support independent research and analysis
 
 ## Schedule
 
@@ -27,3 +41,19 @@ Given our time constraints today, we'll focus on a few key foundations:
 |      | Break                          | 5 minutes  | 6:00–6:05 PM    |
 | 3    | [Working with large-scale data](parts/part03.qmd)  | 45 minutes | 6:05–6:50 PM    |
 |      | Q&A                            | 10 minutes | 6:50–7:00 PM    |
+
+## Recommended readings
+
+Baumer, B. S., Kaplan, D. T., & Horton, N. J. (2017). *Modern data science with R*. Chapman and Hall/CRC.
+
+Grolemund, G., & Wickham, H. (2017). *R for data science: Import, tidy, transform, visualize, and model data*. O’Reilly Media. [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/){target="_blank"}
+
+Knaflic, C. N. (2015). *Storytelling with data: A data visualization guide for business professionals*. Wiley.
+
+Peng, R. D. (2016). *R programming for data science*. Leanpub. [https://bookdown.org/rdpeng/rprogdatascience/](https://bookdown.org/rdpeng/rprogdatascience/){target="_blank"}
+
+RStudio Education (n.d.). Learning R for Beginners. Online. [https://education.rstudio.com/learn/beginner/](https://education.rstudio.com/learn/beginner/){target="_blank"}
+
+Wickham, H. (2019). *Advanced R* (2nd ed.). Chapman and Hall/CRC. [https://adv-r.hadley.nz/](https://adv-r.hadley.nz/){target="_blank"}
+
+

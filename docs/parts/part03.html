@@ -8,7 +8,7 @@
 
 <meta name="author" content="Nathan Alexander, PhD">
 
-<title>Part 3: Working with large-scale data – Introduction to Computational Studies in Education and the Social Sciences</title>
+<title>Part 3: Working with large-scale data – Workshop: Introduction to Computational Studies in Education and the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,9 +105,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Part 3: Working with large-scale data – Introduction to Computational Studies in Education and the Social Sciences">
+<meta property="og:title" content="Part 3: Working with large-scale data – Workshop: Introduction to Computational Studies in Education and the Social Sciences">
 <meta property="og:description" content="Intro to Computational Studies in Education and the Social Sciences">
-<meta property="og:site_name" content="Introduction to Computational Studies in Education and the Social Sciences">
+<meta property="og:site_name" content="Workshop: Introduction to Computational Studies in Education and the Social Sciences">
 </head>
 
 <body class="nav-sidebar docked">
@@ -178,8 +212,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="part03-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-3-working-with-data" id="toc-part-3-working-with-data" class="nav-link active" data-scroll-target="#part-3-working-with-data">Part 3: Working with Data</a>
+  <ul class="collapse">
+  <li><a href="#step-1-load-required-packages" id="toc-step-1-load-required-packages" class="nav-link" data-scroll-target="#step-1-load-required-packages">Step 1: Load Required Packages</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="part03-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -219,8 +262,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="part-3-working-with-data" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-working-with-data">Part 3: Working with Data</h2>
+<p>We’ll start with a guided example using student assessment data.</p>
+<ul>
+<li><a href="data/DC_Public_Schools_Student_Assessment_Results.csv">DC Public Schools Student Assessment Results</a></li>
+</ul>
+<section id="step-1-load-required-packages" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-load-required-packages">Step 1: Load Required Packages</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/DC_Public_Schools_Student_Assessment_Results.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 23
+  OBJECTID SCHOOL_YEAR SCHOOL_WARD SCHOOL_CODE SCHOOL_NAME     LEA_CODE LEA_NAME
+     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;   
+1        1 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+2        2 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+3        3 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+4        4 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+5        5 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+6        6 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
+# ℹ 16 more variables: ASSESSMENT_TYPE &lt;chr&gt;, SUBJECT &lt;chr&gt;,
+#   TESTED_GRADE_SUBJECT &lt;chr&gt;, GRADE_OF_ENROLLMENT &lt;chr&gt;, SUBGROUP &lt;chr&gt;,
+#   SUBGROUP_VALUE &lt;chr&gt;, PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt;,
+#   PERCENT_LEVEL_3_ &lt;chr&gt;, PERCENT_LEVEL_1 &lt;chr&gt;, PERCENT_LEVEL_2 &lt;chr&gt;,
+#   PERCENT_LEVEL_3 &lt;chr&gt;, PERCENT_LEVEL_4 &lt;chr&gt;, PERCENT_LEVEL_5 &lt;chr&gt;,
+#   TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt;, CREATED_DATE &lt;lgl&gt;,
+#   LAST_EDITED_DATE &lt;lgl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check structure</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 189,364
+Columns: 23
+$ OBJECTID                       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
+$ SCHOOL_YEAR                    &lt;chr&gt; "2014-15", "2014-15", "2014-15", "2014-…
+$ SCHOOL_WARD                    &lt;chr&gt; "Ward 8", "Ward 8", "Ward 8", "Ward 8",…
+$ SCHOOL_CODE                    &lt;dbl&gt; 217, 217, 217, 217, 217, 217, 217, 217,…
+$ SCHOOL_NAME                    &lt;chr&gt; "Achievement Preparatory Academy PCS Wa…
+$ LEA_CODE                       &lt;dbl&gt; 155, 155, 155, 155, 155, 155, 155, 155,…
+$ LEA_NAME                       &lt;chr&gt; "Achievement Preparatory Academy PCS", …
+$ ASSESSMENT_TYPE                &lt;chr&gt; "PARCC", "PARCC", "PARCC", "PARCC", "PA…
+$ SUBJECT                        &lt;chr&gt; "Math", "Math", "Math", "Math", "Math",…
+$ TESTED_GRADE_SUBJECT           &lt;chr&gt; "Grade 3", "Grade 3", "Grade 3", "Grade…
+$ GRADE_OF_ENROLLMENT            &lt;chr&gt; "All", "All", "All", "All", "All", "All…
+$ SUBGROUP                       &lt;chr&gt; "Gender", "Gender", "Race by Gender", "…
+$ SUBGROUP_VALUE                 &lt;chr&gt; "Female", "Male", "Female-Black/African…
+$ PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt; "n&lt;25", "27.3%", "n&lt;25", "27.3%", "26.8…
+$ PERCENT_LEVEL_3_               &lt;chr&gt; "n&lt;25", "60.6%", "n&lt;25", "60.6%", "71.4…
+$ PERCENT_LEVEL_1                &lt;chr&gt; "n&lt;25", "15.2%", "n&lt;25", "15.2%", "10.7…
+$ PERCENT_LEVEL_2                &lt;chr&gt; "n&lt;25", "24.2%", "n&lt;25", "24.2%", "17.9…
+$ PERCENT_LEVEL_3                &lt;chr&gt; "n&lt;25", "33.3%", "n&lt;25", "33.3%", "44.6…
+$ PERCENT_LEVEL_4                &lt;chr&gt; "n&lt;25", "27.3%", "n&lt;25", "27.3%", "26.8…
+$ PERCENT_LEVEL_5                &lt;chr&gt; "n&lt;25", "0.0%", "n&lt;25", "0.0%", "0.0%",…
+$ TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt; "n&lt;25", "33", "n&lt;25", "33", "56", "n&lt;25…
+$ CREATED_DATE                   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ LAST_EDITED_DATE               &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    OBJECTID      SCHOOL_YEAR        SCHOOL_WARD         SCHOOL_CODE    
+ Min.   :     1   Length:189364      Length:189364      Min.   : 101.0  
+ 1st Qu.: 47342   Class :character   Class :character   1st Qu.: 214.0  
+ Median : 94682   Mode  :character   Mode  :character   Median : 300.0  
+ Mean   : 94682                                         Mean   : 480.7  
+ 3rd Qu.:142023                                         3rd Qu.: 416.0  
+ Max.   :189364                                         Max.   :3071.0  
+ SCHOOL_NAME           LEA_CODE         LEA_NAME         ASSESSMENT_TYPE   
+ Length:189364      Min.   :   1.00   Length:189364      Length:189364     
+ Class :character   1st Qu.:   1.00   Class :character   Class :character  
+ Mode  :character   Median :   1.00   Mode  :character   Mode  :character  
+                    Mean   :  64.89                                        
+                    3rd Qu.: 129.00                                        
+                    Max.   :4002.00                                        
+   SUBJECT          TESTED_GRADE_SUBJECT GRADE_OF_ENROLLMENT   SUBGROUP        
+ Length:189364      Length:189364        Length:189364       Length:189364     
+ Class :character   Class :character     Class :character    Class :character  
+ Mode  :character   Mode  :character     Mode  :character    Mode  :character  
+                                                                               
+                                                                               
+                                                                               
+ SUBGROUP_VALUE     PERCENT_MEETING_OR_EXCEEDING_E PERCENT_LEVEL_3_  
+ Length:189364      Length:189364                  Length:189364     
+ Class :character   Class :character               Class :character  
+ Mode  :character   Mode  :character               Mode  :character  
+                                                                     
+                                                                     
+                                                                     
+ PERCENT_LEVEL_1    PERCENT_LEVEL_2    PERCENT_LEVEL_3    PERCENT_LEVEL_4   
+ Length:189364      Length:189364      Length:189364      Length:189364     
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ PERCENT_LEVEL_5    TOTAL_NUMBER_VALID_TEST_TAKERS CREATED_DATE  
+ Length:189364      Length:189364                  Mode:logical  
+ Class :character   Class :character               NA's:189364   
+ Mode  :character   Mode  :character                             
+                                                                 
+                                                                 
+                                                                 
+ LAST_EDITED_DATE
+ Mode:logical    
+ NA's:189364     
+                 
+                 
+                 
+                 </code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

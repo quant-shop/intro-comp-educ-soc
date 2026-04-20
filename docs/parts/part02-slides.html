@@ -215,8 +215,15 @@ Nathan Alexander, PhD
 </section>
 <section class="slide level2">
 
-<h3 id="preparing-an-annotated-bibliography">Preparing an annotated bibliography</h3>
-<p>Research requires knowledge of the peer-reviewed literature. We will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.</p>
+<h3 id="using-posit-to-identify-an-initial-set-of-literature">Using Posit to identify an initial set of literature</h3>
+<p>Most of us use Google Scholar to find research liteature. However, there are a host of computational tools that we can use to conduct a literature scan or go more in-depth to conduct a systematic literature review.</p>
+<p>Part of this process is related to the important process of using the literature to help us build theory.</p>
+
+<img data-src="../img/theory-construction.jpg" class="r-stretch quarto-figure-center"><p class="caption">Theory construction</p><p>To that end, good research requires knowledge of the peer-reviewed literature.</p>
+</section>
+<section id="openalex" class="slide level2">
+<h2>OpenAlex</h2>
+<p>We will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.</p>
 <p>Once you are set up in R from <a href="parts/part01.qmd">part 1</a>, we’ll start working with the code below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#install.packages("openalexR")</span></span>
@@ -229,28 +236,42 @@ Nathan Alexander, PhD
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Search for works related to your social justice topic</span></span>
 <span id="cb3-2"><a></a>works_search <span class="ot">&lt;-</span> <span class="fu">oa_fetch</span>(</span>
 <span id="cb3-3"><a></a>  <span class="at">entity =</span> <span class="st">"works"</span>,</span>
-<span id="cb3-4"><a></a>  <span class="at">title.search =</span> <span class="fu">c</span>(<span class="st">"BlackCrit"</span>, <span class="st">"mixed method"</span>, <span class="st">"afropessimism"</span>),</span>
-<span id="cb3-5"><a></a>  <span class="at">from_publication_date =</span> <span class="st">"2026-04-01"</span>,</span>
+<span id="cb3-4"><a></a>  <span class="at">title.search =</span> <span class="fu">c</span>(<span class="st">"BlackCrit"</span>, <span class="st">"youth"</span>),</span>
+<span id="cb3-5"><a></a>  <span class="at">from_publication_date =</span> <span class="st">"2026-03-01"</span>,</span>
 <span id="cb3-6"><a></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">sort =</span> <span class="st">"cited_by_count:desc"</span>),</span>
 <span id="cb3-7"><a></a>  <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
 <span id="cb3-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Requesting url:
-&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cmixed%20method%7Cafropessimism%2Cfrom_publication_date%3A2026-04-01&amp;sort=cited_by_count%3Adesc&gt;
-ℹ Getting 4 pages of results with a total of 679 records...
-⠙ OpenAlex downloading [2/4] ■■■■■■■■■■■■■■■■                  50% ETA:  1s
+&lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&amp;sort=cited_by_count%3Adesc&gt;
+ℹ Getting 14 pages of results with a total of 2613 records...
+⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s
 
-⠹ OpenAlex downloading [3/4] ■■■■■■■■■■■■■■■■■■■■■■■           75% ETA:  1s
+⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s
 
-⠹ OpenAlex downloading [4/4] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s
+⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s
+
+⠼ OpenAlex downloading [7/14] ■■■■■■■■■■■■■■■■                  50% ETA:  9s
+
+⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s
+
+⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s
+
+⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s
+
+⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s
 
 
 
-⠙ Converting [238/679] ■■■■■■■■■■■■                      35% ETA:  2s
+⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s
 
-⠹ Converting [464/679] ■■■■■■■■■■■■■■■■■■■■■■            68% ETA:  1s
+⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s
 
-⠹ Converting [679/679] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s</code></pre>
+⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s
+
+⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s
+
+⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Display the top results</span></span>
 <span id="cb5-2"><a></a>works_search <span class="sc">|&gt;</span></span>
@@ -258,14 +279,14 @@ Nathan Alexander, PhD
 <span id="cb5-4"><a></a>  <span class="fu">show_works</span>() <span class="sc">|&gt;</span></span>
 <span id="cb5-5"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
 <col style="width: 4%">
-<col style="width: 54%">
+<col style="width: 52%">
 <col style="width: 8%">
-<col style="width: 6%">
+<col style="width: 8%">
 <col style="width: 2%">
-<col style="width: 23%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -279,57 +300,61 @@ Nathan Alexander, PhD
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">W7154062697</td>
-<td style="text-align: left;">Bridging the Gap between Automated Intervention and Actual User Experience: A Mixed-Methods Study on Mobile Accessibility Issues for Screen Reader Users</td>
-<td style="text-align: left;">Syed Fatiul Huq</td>
-<td style="text-align: left;">Sam Malek</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: left;">Bridging (networking), Categorization, Construct (python library)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">W7154066130</td>
-<td style="text-align: left;">Animacy and the Eye of the Beholder: A Mixed-Methods Study on Cognitive Animacy with a Kinetic Origami Surface</td>
-<td style="text-align: left;">Charalampos Krekoukiotis</td>
-<td style="text-align: left;">Kouta Minamizawa</td>
+<td style="text-align: left;">W578333627</td>
+<td style="text-align: left;">Youth Training and the Search for Work</td>
+<td style="text-align: left;">Denis Gleeson</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: left;">Animacy, Cognition, Surface (topology)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">W7154151789</td>
-<td style="text-align: left;">The Last Door You Open: A Mixed-Methods Study on Design Strategies for Positive Disengagement in Virtual Reality Games</td>
-<td style="text-align: left;">Ziyan Wang</td>
-<td style="text-align: left;">Tengjia Zuo</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: left;">Disengagement theory, Narrative, Virtual reality</td>
+<td style="text-align: left;">Training (meteorology), Work (physics)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">W7154175323</td>
-<td style="text-align: left;">With Visual Integrity and Care: A Framework for Mixed Methods Research on Visual Social Data</td>
-<td style="text-align: left;">Nina Lutz</td>
-<td style="text-align: left;">Kate Starbird</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: left;">Visual methods, Visual research, The Internet</td>
+<td style="text-align: left;">W7133883343</td>
+<td style="text-align: left;">Faith, flight, and futures: religion and the <i>Japa</i> migration of Nigerian youth</td>
+<td style="text-align: left;">Ntongha Eni Ikpi</td>
+<td style="text-align: left;">Dodeye Uduak Williams</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Ethnic group, Immigration, Ethnography</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">W7154731961</td>
-<td style="text-align: left;">Peer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”</td>
-<td style="text-align: left;">Ludo Waltman</td>
+<td style="text-align: left;">W7133782334</td>
+<td style="text-align: left;">Faith, governance, and exodus: exploring the impact of religion and politics on youth migration in Africa</td>
+<td style="text-align: left;">Dodeye Uduak Williams</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: left;">MEDLINE, Key (lock), Data collection</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Politics, Ethnic group, Immigration</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">W7154751962</td>
-<td style="text-align: left;">Peer Review of “Awareness, Experiences, and Attitudes Toward Preprints Among Medical Academics: Convergent Mixed Methods Study”</td>
-<td style="text-align: left;">Kazuki Ide</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: left;">W7135378591</td>
+<td style="text-align: left;">Vaping as Captured Homeostasis - Adverse Events, Trauma Response, and the Case for Stewardship in Australian Youth Nicotine Policy</td>
+<td style="text-align: left;">John Richard Smith</td>
+<td style="text-align: left;">SHAI/HATI</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: left;">MEDLINE, Key (lock), Data collection</td>
+<td style="text-align: left;">Enforcement, Harm, Framing (construction)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">W7134069619</td>
+<td style="text-align: left;">Transnational youth and social mobility: the role of family financial support in unsettled lives</td>
+<td style="text-align: left;">Alexandra Lee</td>
+<td style="text-align: left;">Loretta Baldassar</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Social support, Remittance, Politics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W7133207944</td>
+<td style="text-align: left;">Within-Person Association Between Daily Screen Use and Sleep in Youth</td>
+<td style="text-align: left;">Matthew Bourke</td>
+<td style="text-align: left;">George Thomas</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Bedtime, Sleep (system call), Association (psychology)</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+</section>
+<section id="web-of-science-wos" class="slide level2">
+<h2>Web of Science (WoS)</h2>
+<p>We can also use the WoS to conduct a full systematic literature review with the <a href="https://quanteda.io/" target="_blank"><code>Quanteda</code></a> package.</p>
 
 
 </section>

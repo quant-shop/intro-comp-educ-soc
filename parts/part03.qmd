@@ -23,3 +23,26 @@ editor_options:
   markdown:
     wrap: sentence
 ---
+
+## Part 3: Working with Data
+
+We'll start with a guided example using student assessment data.
+
+- [DC Public Schools Student Assessment Results](data/DC_Public_Schools_Student_Assessment_Results.csv)
+
+### Step 1: Load Required Packages
+
+```{r, message=F, warning=F}
+library(tidyverse)
+df <- read_csv("../data/DC_Public_Schools_Student_Assessment_Results.csv")
+
+# View the first few rows
+head(df)
+
+# Check structure
+glimpse(df)
+
+# Summary statistics
+summary(df)
+```
+
