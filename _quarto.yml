@@ -37,6 +37,8 @@ website:
           text: Home
         - href: about.qmd
           text: Facilitator
+        - href: data.qmd
+          text: Sample data
         - href: computing.qmd
           text: Computing
     - section: "Workshop slides"

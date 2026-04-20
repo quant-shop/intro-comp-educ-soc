@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Nathan Alexander, PhD">
-  <title>Introduction to Computational Studies in Education and the Social Sciences – Part 2: Conducting a literature scan</title>
+  <title>Workshop: Introduction to Computational Studies in Education and the Social Sciences – Part 2: Conducting a literature scan</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -186,9 +186,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Part 2: Conducting a literature scan – Introduction to Computational Studies in Education and the Social Sciences">
+<meta property="og:title" content="Part 2: Conducting a literature scan – Workshop: Introduction to Computational Studies in Education and the Social Sciences">
 <meta property="og:description" content="Intro to Computational Studies in Education and the Social Sciences">
-<meta property="og:site_name" content="Introduction to Computational Studies in Education and the Social Sciences">
+<meta property="og:site_name" content="Workshop: Introduction to Computational Studies in Education and the Social Sciences">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -245,9 +245,9 @@ Nathan Alexander, PhD
 <pre><code>Requesting url:
 &lt;https://api.openalex.org/works?filter=title.search%3ABlackCrit%7Cyouth%2Cfrom_publication_date%3A2026-03-01&amp;sort=cited_by_count%3Adesc&gt;
 ℹ Getting 14 pages of results with a total of 2613 records...
-⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA: 11s
+⠙ OpenAlex downloading [2/14] ■■■■■                             14% ETA:  8s
 
-⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 12s
+⠹ OpenAlex downloading [3/14] ■■■■■■■                           21% ETA: 10s
 
 ⠸ OpenAlex downloading [5/14] ■■■■■■■■■■■■                      36% ETA: 11s
 
@@ -255,23 +255,25 @@ Nathan Alexander, PhD
 
 ⠴ OpenAlex downloading [9/14] ■■■■■■■■■■■■■■■■■■■■              64% ETA:  7s
 
-⠦ OpenAlex downloading [10/14] ■■■■■■■■■■■■■■■■■■■■■■            71% ETA:  6s
+⠦ OpenAlex downloading [11/14] ■■■■■■■■■■■■■■■■■■■■■■■■■         79% ETA:  4s
 
-⠧ OpenAlex downloading [12/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% ETA:  3s
+⠧ OpenAlex downloading [13/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% ETA:  1s
 
 ⠧ OpenAlex downloading [14/14] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s
 
 
 
-⠙ Converting [517/2613] ■■■■■■■                           20% ETA:  8s
+⠙ Converting [188/2613] ■■■                                7% ETA: 13s
 
-⠹ Converting [1183/2613] ■■■■■■■■■■■■■■■                   45% ETA:  6s
+⠹ Converting [445/2613] ■■■■■■                            17% ETA: 12s
 
-⠸ Converting [1724/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s
+⠸ Converting [1011/2613] ■■■■■■■■■■■■■                     39% ETA:  9s
 
-⠼ Converting [2188/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% ETA:  2s
+⠼ Converting [1720/2613] ■■■■■■■■■■■■■■■■■■■■■             66% ETA:  4s
 
-⠼ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s</code></pre>
+⠴ Converting [2456/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% ETA:  1s
+
+⠴ Converting [2613/2613] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% ETA:  0s</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Display the top results</span></span>
 <span id="cb5-2"><a></a>works_search <span class="sc">|&gt;</span></span>
@@ -355,9 +357,893 @@ Nathan Alexander, PhD
 <section id="web-of-science-wos" class="slide level2">
 <h2>Web of Science (WoS)</h2>
 <p>We can also use the WoS to conduct a full systematic literature review with the <a href="https://quanteda.io/" target="_blank"><code>Quanteda</code></a> package.</p>
-
-
+<p>Web of Science (WoS) is a comprehensive and highly respected citation database used for scholarly research. It is one of the main databases used to identify and compare collections of citations and bibliographic sources. Given the conceptual replication method selected for this study, we utilized the Web of Science Core Collection of bibliometric data. This decision provided us with an opportunity to understand differences across disciplinary boundaries, despite the increasingly interdisciplinary nature of research on racism in STEM. Prior studies have analyzed differences between Google Scholar and WoS. Unlike Google Scholar, the Web of Science Core Collection offers access to multiple citation indexes, covering a wide range of academic disciplines and publication types, making it an ideal resource for data collection and analysis.</p>
+<p>For this section, I will walk us through a sample study conducted with two graduate students on <a href="https://rpubs.com/professornaite/notions-of-racism" target="_blank">notions of racism in STEM</a>.</p>
+<p><strong>[insert table: Results of title keyword search]</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Keyword</strong></th>
+<th style="text-align: center;"><strong>EBSCO</strong></th>
+<th style="text-align: center;"><strong>Google Scholar</strong></th>
+<th style="text-align: center;"><strong>Scopus</strong></th>
+<th style="text-align: center;"><strong>Web of Science</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>anti-racism</td>
+<td style="text-align: center;">381</td>
+<td style="text-align: center;">3,420</td>
+<td style="text-align: center;">685</td>
+<td style="text-align: center;">592</td>
+</tr>
+<tr class="even">
+<td>anti-racist</td>
+<td style="text-align: center;">427</td>
+<td style="text-align: center;">3,620</td>
+<td style="text-align: center;">826</td>
+<td style="text-align: center;">685</td>
+</tr>
+<tr class="odd">
+<td>race</td>
+<td style="text-align: center;">44,057</td>
+<td style="text-align: center;">~313,000</td>
+<td style="text-align: center;">65,203</td>
+<td style="text-align: center;">69,537</td>
+</tr>
+<tr class="even">
+<td>racial</td>
+<td style="text-align: center;">24,467</td>
+<td style="text-align: center;">~212,000</td>
+<td style="text-align: center;">39,930</td>
+<td style="text-align: center;">41,527</td>
+</tr>
+<tr class="odd">
+<td>racialization</td>
+<td style="text-align: center;">519</td>
+<td style="text-align: center;">2,740</td>
+<td style="text-align: center;">1,108</td>
+<td style="text-align: center;">1,077</td>
+</tr>
+<tr class="even">
+<td>racialized</td>
+<td style="text-align: center;">958</td>
+<td style="text-align: center;">~5,600</td>
+<td style="text-align: center;">1,863</td>
+<td style="text-align: center;">2,120</td>
+</tr>
+<tr class="odd">
+<td>racism</td>
+<td style="text-align: center;">8,669</td>
+<td style="text-align: center;">~99,500</td>
+<td style="text-align: center;">11,418</td>
+<td style="text-align: center;">10,674</td>
+</tr>
+<tr class="even">
+<td>racist</td>
+<td style="text-align: center;">1,965</td>
+<td style="text-align: center;">~15,100</td>
+<td style="text-align: center;">2,170</td>
+<td style="text-align: center;">1,906</td>
+</tr>
+</tbody>
+</table>
+<p>Systematic review techniques offer a structured approach to synthesizing research literature. New computational methods have significantly advanced systematic reviews, helping with more pre-defined protocols outlining the methodologies that should be undertaken for reproducibility. These approaches employ a comprehensive, detailed search strategy across multiple databases and sources to find relevant studies. Systematic reviews also utilize specific, pre-defined inclusion and exclusion criteria for studies, whereas more critical reviews may rely on subjective or seemingly unclear selection criteria due to content- or disciplinary-specific knowledge. This often ignored but critical aspect of systematic reviews requires a rigorous assessment of its contribution to and limitations around study quality and risk of bias.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="do">## set up, load libraries</span></span>
+<span id="cb6-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-3"><a></a><span class="fu">library</span>(readtext)</span>
+<span id="cb6-4"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-5"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb6-6"><a></a><span class="fu">library</span>(gt)</span>
+<span id="cb6-7"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-8"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-9"><a></a><span class="fu">library</span>(knitr)</span>
+<span id="cb6-10"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-11"><a></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb6-12"><a></a><span class="fu">library</span>(bibliometrix)</span>
+<span id="cb6-13"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-14"><a></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb6-15"><a></a><span class="fu">library</span>(DiagrammeRsvg)</span>
+<span id="cb6-16"><a></a><span class="fu">library</span>(rsvg)</span>
+<span id="cb6-17"><a></a><span class="fu">library</span>(quanteda)</span>
+<span id="cb6-18"><a></a><span class="fu">library</span>(stringr)</span>
+<span id="cb6-19"><a></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb6-20"><a></a><span class="fu">library</span>(<span class="st">"quanteda.textmodels"</span>)</span>
+<span id="cb6-21"><a></a><span class="fu">library</span>(<span class="st">"quanteda.textstats"</span>)</span>
+<span id="cb6-22"><a></a><span class="fu">library</span>(<span class="st">"quanteda.textplots"</span>)</span>
+<span id="cb6-23"><a></a><span class="fu">require</span>(quanteda.corpora)</span>
+<span id="cb6-24"><a></a>here<span class="sc">::</span><span class="fu">i_am</span>(<span class="st">"part02.qmd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section>
+<section id="research-questions" class="title-slide slide level1 center">
+<h1>RESEARCH QUESTIONS</h1>
+<ol type="1">
+<li><p>What is the intellectual and conceptual structure of research on racism in science, technology, engineering, and mathematics (STEM)?</p></li>
+<li><p>How are notions of racism in the research on STEM distributed across different racialized social systems?</p></li>
+</ol>
+</section>
+<h3 id="scoping">Scoping</h3>
+<p>The data for the study comes from the Web of Science (WoS) Core Collection. Our initial scoping process included a set of iterative steps to make sense of the global research literature on the various notions of racism in STEM. We prioritized three citation indexes in our searches between the period from 2015 to 2024. Our analysis focused on journal articles written in English in the Education, Special Education, and related Education Scientific Disciplines.</p>
+<ul>
+<li>Science Citation Index Expanded, SCI-EXPANDED (2002-present)</li>
+<li>Social Sciences Citation Index SSCI (2002-present)</li>
+<li>Arts and Humanities Citation Index ACHI (2002-present)</li>
+<li>Emerging Sources Citation Index ESSI (2012-present)</li>
+</ul>
+<p>Timespan: 2014-01-01 to 2024-12-31</p>
+<p>Document Types: Article</p>
+<h3 id="inclusion-and-exclusion-criteria">Inclusion and Exclusion Criteria</h3>
+<table class="caption-top">
+<caption>Inclusion and exclusion criteria for the study</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IC1</td>
+<td>Article contains STEM and one of the notions in the title (TI) or abstract (AB): racism, “white supremacy,” colonialism, xenophobia, nationalism, antiasian, anti-Asian[*], antiblack, Anti-Black[*]</td>
+</tr>
+<tr class="even">
+<td>IC2</td>
+<td>Article published between 2014 and 2024</td>
+</tr>
+<tr class="odd">
+<td>IC3</td>
+<td>Article originally written in English</td>
+</tr>
+<tr class="even">
+<td>IC4</td>
+<td>Article is a journal article</td>
+</tr>
+<tr class="odd">
+<td>IC5</td>
+<td>Article purpose or core questions center on the topical subjects of analysis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="review">Review</h3>
+<p>Key Columns of Interest:</p>
+<ul>
+<li><p>AU: Authors of the publication</p></li>
+<li><p>AB: Abstract text</p></li>
+<li><p>TI: Title of the publication</p></li>
+<li><p>AU_CO: Countries of the authors</p></li>
+<li><p>SC: Subject categories (e.g., “Education &amp; Educational Research”)</p></li>
+<li><p>PY: Publication year</p></li>
+<li><p>TC: Total citations</p></li>
+</ul></section>
+<section>
+<section id="findings" class="title-slide slide level1 center">
+<h1>FINDINGS</h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Converting your wos collection into a bibliographic dataframe
+
+Done!
+
+
+Generating affiliation field tag AU_UN from C1:  Done!</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 320  69</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+MAIN INFORMATION ABOUT DATA
+
+ Timespan                              2014 : 2025 
+ Sources (Journals, Books, etc)        256 
+ Documents                             320 
+ Annual Growth Rate %                  -18.11 
+ Document Average Age                  4.95 
+ Average citations per doc             12.56 
+ Average citations per year per doc    1.817 
+ References                            18413 
+ 
+DOCUMENT TYPES                     
+ article                               295 
+ article; early access                 19 
+ article; proceedings paper            1 
+ editorial material; early access      1 
+ review; early access                  4 
+ 
+DOCUMENT CONTENTS
+ Keywords Plus (ID)                    703 
+ Author's Keywords (DE)                1053 
+ 
+AUTHORS
+ Authors                               889 
+ Author Appearances                    912 
+ Authors of single-authored docs       134 
+ 
+AUTHORS COLLABORATION
+ Single-authored docs                  138 
+ Documents per Author                  0.36 
+ Co-Authors per Doc                    2.85 
+ International co-authorships %        9.375 
+ 
+
+Annual Scientific Production
+
+ Year    Articles
+    2014        9
+    2015       11
+    2016       14
+    2017       13
+    2018       14
+    2019       22
+    2020       21
+    2021       41
+    2022       47
+    2023       57
+    2024       70
+    2025        1
+
+Annual Percentage Growth Rate -18.11 
+
+
+Most Productive Authors
+
+   Authors        Articles Authors        Articles Fractionalized
+1     MCGEE EO           7   MCGEE EO                        4.70
+2     DANCY M            3   SPENCER BM                      2.00
+3     ADAMES HY          2   RUSSO-TAIT T                    1.33
+4     BROCKMAN AJ        2   BROCKMAN AJ                     1.17
+5     BROOKS E           2   BROOKS E                        1.14
+6     KIM M              2   ARAMAYO RR                      1.00
+7     LEYVA LA           2   ARBUCIAS D                      1.00
+8     MCNEILL RT         2   ARMENGOL JM                     1.00
+9     MICKELSON R        2   ARONS W                         1.00
+10    MISRA DP           2   BABAII E                        1.00
+
+
+Top manuscripts per citations
+
+                           Paper                                      DOI  TC TCperYear  NTC
+1  MCGEE EO, 2016, AM EDUC RES J          10.3102/0002831216676572        230     20.91 4.99
+2  MCGEE EO, 2020, EDUC RESEARCHER        10.3102/0013189X20972718        222     31.71 8.05
+3  CHAVEZ-DUEÑAS NY, 2019, AM PSYCHOL     10.1037/amp0000289              187     23.38 8.18
+4  FUENFSCHILLING L, 2018, RES POLICY     10.1016/j.respol.2018.02.003    155     17.22 4.76
+5  MCCOY DL, 2015, J DIVERS HIGH EDUC     10.1037/a0038676                 88      7.33 5.63
+6  KIIK L, 2016, EURASIAN GEOGR ECON      10.1080/15387216.2016.1198265    78      7.09 1.69
+7  SLAUGHTER-ACEY JC, 2016, ANN EPIDEMIOL 10.1016/j.annepidem.2015.10.005  76      6.91 1.65
+8  MCGEE EO, 2019, TEACH COLL REC         NA                               68      8.50 2.97
+9  LEE MGJ, 2020, INT J STEM EDUC         10.1186/s40594-020-00241-4       66      9.43 2.39
+10 HARTMAN TK, 2021, SOC PSYCHOL PERS SCI 10.1177/1948550620978023         63     10.50 4.55
+
+
+Corresponding Author's Countries
+
+          Country Articles   Freq SCP MCP MCP_Ratio
+1  USA                 192 0.6076 179  13    0.0677
+2  UNITED KINGDOM       27 0.0854  24   3    0.1111
+3  CANADA               20 0.0633  17   3    0.1500
+4  AUSTRALIA            13 0.0411  10   3    0.2308
+5  CHINA                 9 0.0285   9   0    0.0000
+6  BRAZIL                7 0.0222   5   2    0.2857
+7  GERMANY               4 0.0127   4   0    0.0000
+8  KOREA                 4 0.0127   4   0    0.0000
+9  SOUTH AFRICA          4 0.0127   4   0    0.0000
+10 SWEDEN                4 0.0127   3   1    0.2500
+
+
+SCP: Single Country Publications
+
+MCP: Multiple Country Publications
+
+
+Total Citations per Country
+
+     Country      Total Citations Average Article Citations
+1  USA                       2754                     14.34
+2  UNITED KINGDOM             304                     11.26
+3  CANADA                     238                     11.90
+4  SWEDEN                     178                     44.50
+5  BRAZIL                      82                     11.71
+6  ESTONIA                     78                     78.00
+7  AUSTRALIA                   64                      4.92
+8  ISRAEL                      60                     30.00
+9  ECUADOR                     58                     58.00
+10 CHINA                       45                      5.00
+
+
+Most Relevant Sources
+
+                                                      Sources        Articles
+1  JOURNAL OF CHEMICAL EDUCATION                                            6
+2  RACE ETHNICITY AND EDUCATION                                             6
+3  CULTURAL STUDIES OF SCIENCE EDUCATION                                    5
+4  JOURNAL OF RESEARCH IN SCIENCE TEACHING                                  5
+5  ETHNIC AND RACIAL STUDIES                                                4
+6  INTERNATIONAL JOURNAL OF ENVIRONMENTAL RESEARCH AND PUBLIC HEALTH        4
+7  INTERNATIONAL JOURNAL OF STEM EDUCATION                                  4
+8  JOURNAL OF DIVERSITY IN HIGHER EDUCATION                                 4
+9  JOURNAL OF RACIAL AND ETHNIC HEALTH DISPARITIES                          4
+10 NATIONS AND NATIONALISM                                                  4
+
+
+Most Relevant Keywords
+
+   Author Keywords (DE)      Articles Keywords-Plus (ID)     Articles
+1          RACISM                  34         RACE                 43
+2          RACE                    21         EXPERIENCES          31
+3          STEM                    15         SCIENCE              29
+4          NATIONALISM             14         WOMEN                29
+5          HIGHER EDUCATION        13         EDUCATION            28
+6          COLONIALISM             11         IDENTITY             23
+7          COVID-19                11         HEALTH               22
+8          GENDER                  11         STUDENTS             22
+9          INTERSECTIONALITY       10         DISCRIMINATION       18
+10         DIVERSITY                9         DISPARITIES          17</code></pre>
+</div>
+</div>
+</section>
+<section id="descriptive-performance-analysis" class="slide level2">
+<h2>Descriptive (performance) analysis</h2>
+<p>Summary of the data set and documents.</p>
+<h3 id="publication-related-metrics">Publication-related metrics</h3>
+<h4 id="main-information">Main information</h4>
+<p>Main information about the collection.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>S[<span class="dv">2</span>] <span class="co"># Main information</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MainInformationDF
+                               Description   Results
+1              MAIN INFORMATION ABOUT DATA          
+2                                 Timespan 2014:2025
+3           Sources (Journals, Books, etc)       256
+4                                Documents       320
+5  Annual Growth Rate %                  -     18.11
+6                     Document Average Age      4.95
+7                Average citations per doc     12.56
+8       Average citations per year per doc     1.817
+9                               References     18413
+10                          DOCUMENT TYPES          
+11                                 article       295
+12                   article; early access        19
+13              article; proceedings paper         1
+14        editorial material; early access         1
+15                    review; early access         4
+16                       DOCUMENT CONTENTS          
+17                      Keywords Plus (ID)       703
+18                  Author's Keywords (DE)      1053
+19                                 AUTHORS          
+20                                 Authors       889
+21                      Author Appearances       912
+22         Authors of single-authored docs       134
+23                   AUTHORS COLLABORATION          
+24                    Single-authored docs       138
+25                    Documents per Author      0.36
+26                      Co-Authors per Doc      2.85
+27          International co-authorships %     9.375
+28                                                  </code></pre>
+</div>
+</div>
+<h4 id="publications-by-year">Publications by year</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>S[<span class="dv">3</span>] <span class="co"># Article count by year</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$AnnualProduction
+   Year    Articles
+1     2014        9
+2     2015       11
+3     2016       14
+4     2017       13
+5     2018       14
+6     2019       22
+7     2020       21
+8     2021       41
+9     2022       47
+10    2023       57
+11    2024       70
+12    2025        1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>year_counts <span class="ot">&lt;-</span> M4 <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">group_by</span>(PY) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="co"># Your existing plot code</span></span>
+<span id="cb14-6"><a></a>pubs_by_year <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(year_counts, <span class="fu">aes</span>(<span class="at">x =</span> PY, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> count), </span>
+<span id="cb14-9"><a></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), </span>
+<span id="cb14-10"><a></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
+<span id="cb14-11"><a></a>            <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb14-12"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb14-13"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-14"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Number of Publications"</span>, </span>
+<span id="cb14-15"><a></a>       <span class="at">title =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb14-16"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">min</span>(year_counts<span class="sc">$</span>PY), <span class="fu">max</span>(year_counts<span class="sc">$</span>PY), <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-17"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb14-18"><a></a></span>
+<span id="cb14-19"><a></a>pubs_by_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Save the plot as a high-resolution PNG</span></span>
+<span id="cb15-2"><a></a><span class="co">#ggsave("plots/publications_by_year.png", plot = pubs_by_year, width = 10, height = 8, units = "in", dpi = 300, bg = "white")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h4 id="most-productive-authors">Most productive authors</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>S[<span class="dv">5</span>] <span class="co"># Most productive authors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MostProdAuthors
+   Authors        Articles Authors        Articles Fractionalized
+1     MCGEE EO           7   MCGEE EO                        4.70
+2     DANCY M            3   SPENCER BM                      2.00
+3     ADAMES HY          2   RUSSO-TAIT T                    1.33
+4     BROCKMAN AJ        2   BROCKMAN AJ                     1.17
+5     BROOKS E           2   BROOKS E                        1.14
+6     KIM M              2   ARAMAYO RR                      1.00
+7     LEYVA LA           2   ARBUCIAS D                      1.00
+8     MCNEILL RT         2   ARMENGOL JM                     1.00
+9     MICKELSON R        2   ARONS W                         1.00
+10    MISRA DP           2   BABAII E                        1.00</code></pre>
+</div>
+</div>
+<h4 id="most-cited-papers">Most cited papers</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>S[<span class="dv">6</span>] <span class="co"># Most cited papers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MostCitedPapers
+                           Paper                                      DOI  TC TCperYear  NTC
+1  MCGEE EO, 2016, AM EDUC RES J          10.3102/0002831216676572        230     20.91 4.99
+2  MCGEE EO, 2020, EDUC RESEARCHER        10.3102/0013189X20972718        222     31.71 8.05
+3  CHAVEZ-DUEÑAS NY, 2019, AM PSYCHOL     10.1037/amp0000289              187     23.38 8.18
+4  FUENFSCHILLING L, 2018, RES POLICY     10.1016/j.respol.2018.02.003    155     17.22 4.76
+5  MCCOY DL, 2015, J DIVERS HIGH EDUC     10.1037/a0038676                 88      7.33 5.63
+6  KIIK L, 2016, EURASIAN GEOGR ECON      10.1080/15387216.2016.1198265    78      7.09 1.69
+7  SLAUGHTER-ACEY JC, 2016, ANN EPIDEMIOL 10.1016/j.annepidem.2015.10.005  76      6.91 1.65
+8  MCGEE EO, 2019, TEACH COLL REC         NA                               68      8.50 2.97
+9  LEE MGJ, 2020, INT J STEM EDUC         10.1186/s40594-020-00241-4       66      9.43 2.39
+10 HARTMAN TK, 2021, SOC PSYCHOL PERS SCI 10.1177/1948550620978023         63     10.50 4.55</code></pre>
+</div>
+</div>
+<h4 id="main-sources">Main sources</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>S[<span class="dv">9</span>] <span class="co"># Main sources (journals)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MostRelSources
+                                                      Sources        Articles
+1  JOURNAL OF CHEMICAL EDUCATION                                            6
+2  RACE ETHNICITY AND EDUCATION                                             6
+3  CULTURAL STUDIES OF SCIENCE EDUCATION                                    5
+4  JOURNAL OF RESEARCH IN SCIENCE TEACHING                                  5
+5  ETHNIC AND RACIAL STUDIES                                                4
+6  INTERNATIONAL JOURNAL OF ENVIRONMENTAL RESEARCH AND PUBLIC HEALTH        4
+7  INTERNATIONAL JOURNAL OF STEM EDUCATION                                  4
+8  JOURNAL OF DIVERSITY IN HIGHER EDUCATION                                 4
+9  JOURNAL OF RACIAL AND ETHNIC HEALTH DISPARITIES                          4
+10 NATIONS AND NATIONALISM                                                  4</code></pre>
+</div>
+</div>
+<h3 id="citation-related-metrics">Citation-related metrics</h3>
+<h4 id="most-frequently-cited-documents">Most frequently cited documents</h4>
+<p>The top 21 most cited papers. A total of 21 papers was chosen based on ties with the top 15 (8 citations).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># M4$CR[1] # identify separators</span></span>
+<span id="cb22-2"><a></a><span class="co"># Most frequently cited documents in the collection</span></span>
+<span id="cb22-3"><a></a>CR <span class="ot">&lt;-</span> <span class="fu">citations</span>(M4, <span class="at">field =</span> <span class="st">"article"</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb22-4"><a></a><span class="fu">cbind</span>(CR<span class="sc">$</span>Cited[<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                                                                                                                  [,1]
+BRAUN V, 2021, QUAL RES PSYCHOL, V18, P328, DOI 10.1080/14780887.2020.1769238                                                                       17
+CARLONE HB, 2007, J RES SCI TEACH, V44, P1187, DOI 10.1002/TEA.20237                                                                                14
+MCGEE EO, 2016, AM EDUC RES J, V53, P1626, DOI 10.3102/0002831216676572                                                                             14
+SUE DW, 2007, AM PSYCHOL, V62, P271, DOI 10.1037/0003-066X.62.4.271                                                                                 13
+CRENSHAW K, 1993, STANFORD LAW REVIEW VOL 43, NO 6, JULY 1991, P1241                                                                                12
+MCGEE EO, 2011, AM EDUC RES J, V48, P1347, DOI 10.3102/0002831211423972                                                                             12
+ONG M, 2011, HARVARD EDUC REV, V81, P172, DOI 10.17763/HAER.81.2.T022245N7X4752V2                                                                   12
+SOLÓRZANO D, 2000, J NEGRO EDUC, V69, P60                                                                                                           12
+BONILLA-SILVA E., 2021, RACISM RACISTS COLOR                                                                                                        11
+MCGEE EO, 2017, COGNITION INSTRUCT, V35, P265, DOI 10.1080/07370008.2017.1355211                                                                    10
+MCGEE EO, 2020, EDUC RESEARCHER, V49, P633, DOI 10.3102/0013189X20972718                                                                            10
+DELGADO R., 2017, CRITICAL RACE THEORY                                                                                                               9
+MARTIN DB, 2009, TEACH COLL REC, V111, P295                                                                                                          9
+MCGEE E.O., 2020, BLACK, BROWN, BRUISED: HOW RACIALIZED STEM EDUCATION STIFLES INNOVATION                                                            9
+BONILLASILVA E, 1997, AM SOCIOL REV, V62, P465, DOI 10.2307/2657316                                                                                  8
+COLLINS P. H., 2020, INTERSECTIONALITY, V2ND                                                                                                         8
+CRENSHAW KIMBERLE., 1991, MAPPING THE MARGINS: INTERSECTIONALITY, IDENTITY POLITICS, AND VIOLENCE AGAINST WOMEN OF COLOR, DOI DOI 10.2307/1229039    8
+IRELAND DT, 2018, REV RES EDUC, V42, P226, DOI 10.3102/0091732X18759072                                                                              8
+KENDI I. X., 2019, BE ANTIRACIST                                                                                                                     8
+LADSONBILLINGS G, 1995, TEACH COLL REC, V97, P47                                                                                                     8
+ONG M, 2005, SOC PROBL, V52, P593, DOI 10.1525/SP.2005.52.4.593                                                                                      8</code></pre>
+</div>
+</div>
+<h3 id="keywords-and-keywords-plus">Keywords and Keywords Plus</h3>
+<h4 id="author-keywords-and-keywords-plus">Author Keywords and Keywords-Plus</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>S[<span class="dv">10</span>] <span class="co"># Author Keywords and Keywords-Plus</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MostRelKeywords
+   Author Keywords (DE)      Articles Keywords-Plus (ID)     Articles
+1          RACISM                  34         RACE                 43
+2          RACE                    21         EXPERIENCES          31
+3          STEM                    15         SCIENCE              29
+4          NATIONALISM             14         WOMEN                29
+5          HIGHER EDUCATION        13         EDUCATION            28
+6          COLONIALISM             11         IDENTITY             23
+7          COVID-19                11         HEALTH               22
+8          GENDER                  11         STUDENTS             22
+9          INTERSECTIONALITY       10         DISCRIMINATION       18
+10         DIVERSITY                9         DISPARITIES          17</code></pre>
+</div>
+</div>
+<h4 id="keyword-occurence-network">Keyword Occurence Network</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Classical keyword co-occurrences network</span></span>
+<span id="cb26-2"><a></a>NetMatrix1 <span class="ot">&lt;-</span> <span class="fu">biblioNetwork</span>(M4, <span class="at">analysis =</span> <span class="st">"co-occurrences"</span>, <span class="at">network =</span> <span class="st">"keywords"</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb26-3"><a></a></span>
+<span id="cb26-4"><a></a><span class="co"># statistics for the network</span></span>
+<span id="cb26-5"><a></a>netstat1 <span class="ot">&lt;-</span> <span class="fu">networkStat</span>(NetMatrix1)</span>
+<span id="cb26-6"><a></a><span class="fu">summary</span>(netstat1, <span class="at">k=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+Main statistics about the network
+
+ Size                                  703 
+ Density                               0.016 
+ Transitivity                          0.286 
+ Diameter                              6 
+ Degree Centralization                 0.229 
+ Average path length                   2.883 
+ </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Plot the network</span></span>
+<span id="cb28-2"><a></a><span class="fu">set.seed</span>(<span class="dv">3</span>)</span>
+<span id="cb28-3"><a></a>net1a <span class="ot">=</span> <span class="fu">networkPlot</span>(NetMatrix1, </span>
+<span id="cb28-4"><a></a>                   <span class="at">n =</span> <span class="dv">25</span>,  <span class="co"># Limit to top 25 keywords</span></span>
+<span id="cb28-5"><a></a>                   <span class="at">normalize =</span> <span class="st">"association"</span>,</span>
+<span id="cb28-6"><a></a>                   <span class="at">Title =</span> <span class="st">"Top Keyword Co-Occurrences"</span>, </span>
+<span id="cb28-7"><a></a>                   <span class="at">type =</span> <span class="st">"circle"</span>, </span>
+<span id="cb28-8"><a></a>                   <span class="at">size =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb28-9"><a></a>                   <span class="at">remove.multiple =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb28-10"><a></a>                   <span class="at">labelsize =</span> <span class="fl">0.7</span>,</span>
+<span id="cb28-11"><a></a>                   <span class="at">cluster =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>net1b <span class="ot">=</span> <span class="fu">networkPlot</span>(NetMatrix1, </span>
+<span id="cb29-2"><a></a>                   <span class="at">n =</span> <span class="dv">30</span>,  <span class="co"># Even fewer nodes</span></span>
+<span id="cb29-3"><a></a>                   <span class="at">normalize =</span> <span class="st">"association"</span>,</span>
+<span id="cb29-4"><a></a>                   <span class="at">Title =</span> <span class="st">"Keyword Network"</span>, </span>
+<span id="cb29-5"><a></a>                   <span class="at">type =</span> <span class="st">"kamada"</span>, </span>
+<span id="cb29-6"><a></a>                   <span class="at">size =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb29-7"><a></a>                   <span class="at">remove.multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb29-8"><a></a>                   <span class="at">labelsize =</span> <span class="fl">0.5</span>,</span>
+<span id="cb29-9"><a></a>                   <span class="at">cluster =</span> <span class="st">"louvain"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-13-2.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>net1c <span class="ot">=</span> <span class="fu">networkPlot</span>(NetMatrix1, </span>
+<span id="cb30-2"><a></a>                   <span class="at">n =</span> <span class="dv">30</span>,  <span class="co"># Even fewer nodes</span></span>
+<span id="cb30-3"><a></a>                   <span class="co">#normalize = "association",</span></span>
+<span id="cb30-4"><a></a>                   <span class="co">#weighted = T,</span></span>
+<span id="cb30-5"><a></a>                   <span class="at">Title =</span> <span class="st">"Keyword Co-Occurence Network"</span>, </span>
+<span id="cb30-6"><a></a>                   <span class="at">type =</span> <span class="st">"fruchterman"</span>, </span>
+<span id="cb30-7"><a></a>                   <span class="at">size =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb30-8"><a></a>                   <span class="at">remove.multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb30-9"><a></a>                   <span class="at">labelsize =</span> <span class="fl">0.5</span>,</span>
+<span id="cb30-10"><a></a>                   <span class="at">cluster =</span> <span class="st">"louvain"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-13-3.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="conceptual-structure-map">Conceptual Structure Map</h3>
+</section>
+<section id="conceptual-structure" class="slide level2">
+<h2>Conceptual Structure</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">suppressWarnings</span>(CS1 <span class="ot">&lt;-</span> <span class="fu">conceptualStructure</span>(M4,</span>
+<span id="cb31-2"><a></a>                                            <span class="at">method=</span><span class="st">"MCA"</span>, </span>
+<span id="cb31-3"><a></a>                                            <span class="at">field=</span><span class="st">"ID"</span>, </span>
+<span id="cb31-4"><a></a>                                            <span class="at">minDegree=</span><span class="dv">15</span>, </span>
+<span id="cb31-5"><a></a>                                            <span class="at">clust=</span><span class="dv">5</span>, </span>
+<span id="cb31-6"><a></a>                                            <span class="at">stemming=</span><span class="cn">FALSE</span>, </span>
+<span id="cb31-7"><a></a>                                            <span class="at">labelsize=</span><span class="dv">15</span>,</span>
+<span id="cb31-8"><a></a>                                            <span class="at">documents=</span><span class="dv">20</span>)</span>
+<span id="cb31-9"><a></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-14-2.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-14-3.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-14-4.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Conceptual Structure using keywords (method="CA")</span></span>
+<span id="cb32-2"><a></a>CS <span class="ot">&lt;-</span> <span class="fu">conceptualStructure</span>(M4,<span class="at">field=</span><span class="st">"ID"</span>, <span class="at">method=</span><span class="st">"CA"</span>, <span class="at">minDegree=</span><span class="dv">4</span>, <span class="at">clust=</span><span class="dv">5</span>, <span class="at">stemming=</span><span class="cn">FALSE</span>, <span class="at">labelsize=</span><span class="dv">10</span>, <span class="at">documents=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-2.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-3.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-4.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>CS <span class="ot">&lt;-</span> <span class="fu">conceptualStructure</span>(M4, </span>
+<span id="cb33-2"><a></a>                           <span class="at">field=</span><span class="st">"ID"</span>, </span>
+<span id="cb33-3"><a></a>                           <span class="at">method=</span><span class="st">"CA"</span>, </span>
+<span id="cb33-4"><a></a>                           <span class="at">minDegree=</span><span class="dv">4</span>, </span>
+<span id="cb33-5"><a></a>                           <span class="at">clust=</span><span class="dv">5</span>, </span>
+<span id="cb33-6"><a></a>                           <span class="at">stemming=</span><span class="cn">FALSE</span>, </span>
+<span id="cb33-7"><a></a>                           <span class="at">labelsize=</span><span class="dv">10</span>,  <span class="co"># Set to 0 to remove labels</span></span>
+<span id="cb33-8"><a></a>                           <span class="at">documents=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-5.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-6.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-7.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-8.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Extract coordinates and clusters</span></span>
+<span id="cb34-2"><a></a>coords <span class="ot">&lt;-</span> CS[[<span class="dv">1</span>]]  <span class="co"># Coordinates</span></span>
+<span id="cb34-3"><a></a>clusters <span class="ot">&lt;-</span> CS[[<span class="dv">2</span>]]  <span class="co"># Cluster assignments</span></span>
+<span id="cb34-4"><a></a></span>
+<span id="cb34-5"><a></a>CS[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$graph_terms</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-15-9.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Create a historical citation network</span></span>
+<span id="cb36-2"><a></a><span class="fu">options</span>(<span class="at">width=</span><span class="dv">130</span>)</span>
+<span id="cb36-3"><a></a>histResults <span class="ot">&lt;-</span> <span class="fu">histNetwork</span>(M4, <span class="at">min.citations =</span> <span class="dv">5</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+WOS DB:
+Searching local citations (LCS) by reference items (SR) and DOIs...
+
+Analyzing 19923 reference items...
+
+Found 29 documents with no empty Local Citations (LCS)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Plot a historical co-citation network</span></span>
+<span id="cb38-2"><a></a>net <span class="ot">&lt;-</span> <span class="fu">histPlot</span>(histResults, <span class="at">n=</span><span class="dv">15</span>, <span class="at">size =</span> <span class="dv">8</span>, <span class="at">labelsize=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part02_files/figure-html/unnamed-chunk-17-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Legend
+
+                                                                            Label
+1                         MCCOY DL, 2015, J DIVERS HIGH EDUC DOI 10.1037/A0038676
+2                      MCGEE EO, 2016, AM EDUC RES J DOI 10.3102/0002831216676572
+3                           BROWN BA, 2016, J RES SCI TEACH DOI 10.1002/TEA.21249
+4                           MCGEE E, 2018, AERA OPEN DOI 10.1177/2332858418816658
+5                   LEE MGJ, 2020, INT J STEM EDUC DOI 10.1186/S40594-020-00241-4
+6                    MCGEE EO, 2020, EDUC RESEARCHER DOI 10.3102/0013189X20972718
+7                   DANCY M, 2020, INT J STEM EDUC DOI 10.1186/S40594-020-00250-3
+8                        VAN DUSEN B, 2020, J RES SCI TEACH DOI 10.1002/TEA.21584
+9                           SPENCER BM, 2021, SOCIOL FORUM DOI 10.1111/SOCF.12724
+10 NISSEN JM, 2021, PHYS REV PHYS EDUC R DOI 10.1103/PHYSREVPHYSEDUCRES.17.010116
+11                  ALLEN D, 2022, INT J STEM EDUC DOI 10.1186/S40594-022-00334-2
+12                      RUSSO-TAIT T, 2022, J RES SCI TEACH DOI 10.1002/TEA.21775
+13                MCNEILL RT, 2022, J LEARN SCI DOI 10.1080/10508406.2022.2073233
+14                    KING GP, 2023, CBE-LIFE SCI EDUC DOI 10.1187/CBE.22-06-0104
+15                    WILKINS-YEL KG, 2023, J RES SCI TEACH DOI 10.1002/TEA.21798
+16           MCGEE EO, 2023, ETHNIC RACIAL STUD DOI 10.1080/01419870.2022.2159474
+17             FORSYTHE D, 2024, J HIGH EDUC-UK DOI 10.1080/00221546.2023.2265285
+                                                                                                                                                                 Author_Keywords
+1                                                                                                                                COLORBLIND RACISM; MENTORING; STUDENTS OF COLOR
+2                                                                    STEREOTYPE MANAGEMENT; STEM STUDENTS OF COLOR; RACIAL HOSTILITY IN ACADEMIA; STEM RACIAL GAP; CULTURAL BIAS
+3                                                                                                           AFRICAN-AMERICAN; SCIENCE IDENTITY; MATRICULATION; ACCESS TO SCIENCE
+4                                                     RACIAL STEREOTYPES; STEREOTYPE LIFT; STEREOTYPE THREAT; COLLEGE STEM OUTCOMES; RACIAL TRAUMA; BLACK; ASIAN; POLITICAL RACE
+5                                                                                       RACIAL MICROAGGRESSIONS; HIGHER EDUCATION; STEM; EDUCATIONAL SETTING; DIVERSITY CONCERNS
+6  CULTURAL ANALYSIS; DISPARITIES; DOCTORAL; ENGINEERING EDUCATION; ENTREPRENEURSHIP; HBCUS; HIGHER EDUCATION; MENTORING; MINORITIZED; RACE; STEM; STRUCTURAL RACISM; TECHNOLOGY
+7                                                                                                                             RACE; GENDER; UNDERGRADUATES; QUALITATIVE RESEARCH
+8                                        CRITICAL QUANTITATIVE INTERSECTIONALITY; EQUALITY; EQUITY; GENDER; HIERARCHICAL LINEAR MODEL; HIGHER EDUCATION; LEARNING; PHYSICS; RACE
+9                                                  BLACK MEN; CRITICAL RACE THEORY; PSYCHOLOGICAL HEALTH AND WELL-BEING; RACISM; RESPECTABILITY POLITICS; STEM DOCTORAL PROGRAMS
+10                                                                                                                                                                          &lt;NA&gt;
+11                                                                                                     BLACK; MINORITY; WOMEN; STEM; COMMUNITY COLLEGE; TRANSFER; RACISM; SEXISM
+12                                                                     COLLEGE SCIENCE FACULTY; COLOR-BLIND RACISM; CRITICAL RACIAL CONSCIOUSNESS; RACIALLY MINORITIZED STUDENTS
+13                                                                                                                                                                          &lt;NA&gt;
+14                                                                                                                                                                          &lt;NA&gt;
+15                                                                                                                COUNTERSPACE; MENTAL HEALTH; PERSISTENCE; STEM; WOMEN OF COLOR
+16                                                                     WOMEN OF COLOR; ENGINEERING EDUCATION; HIGHER EDUCATION; SALARY; IDENTITY TAXATION; STEREOTYPE MANAGEMENT
+17                                                                                                                           WHITE SUPREMACY; ANTI-RACISM; STEM; WOMEN; ACTIVISM
+                                                                                                                                                         KeywordsPlus
+1                                                                                   COLLEGE-STUDENTS; AFRICAN-AMERICAN; GENDER; RACE; PERCEPTIONS; EXPERIENCES; WOMEN
+2                                 CRITICAL RACE THEORY; STEREOTYPE THREAT; SCIENCE; EXPERIENCES; EDUCATION; MICROAGGRESSIONS; MATHEMATICS; DIVERSITY; STUDENTS; COLOR
+3                                                                                                                                  EXPERIENCES; PERSISTENCE; STUDENTS
+4                                              AFRICAN-AMERICAN; HIGHER-EDUCATION; IDENTITY; RACE; MICROAGGRESSIONS; MATHEMATICS; EXPERIENCES; CAREERS; IMPACT; WOMEN
+5  AFRICAN-AMERICAN STUDENTS; CRITICAL RACE THEORY; PREDOMINANTLY WHITE; GENDER-DIFFERENCES; COLLEGE-STUDENTS; EXPERIENCES; CLIMATE; COLOR; STEREOTYPE; OPPORTUNITIES
+6                                                                  MATHEMATICS EDUCATION; COLOR; BLACK; RACE; SCIENCE; IDENTITY; STUDENTS; HEALTH; WOMEN; EXPERIENCES
+7                                                                                                                                   DOUBLE BIND; SCIENCE; WOMEN; RACE
+8                                                                                                                                                              GENDER
+9                                                                                                           RACE; COLLEGE; MASCULINITY; PERSISTENCE; EDUCATION; WOMEN
+10                                                                              COLORADO LEARNING ATTITUDES; SELF-EFFICACY; WOMEN; GENDER; MODEL; IMPUTATION; BELIEFS
+11               FEMALE TRANSFER STUDENTS; HIGHER-EDUCATION; TRANSFER SHOCK; ACADEMIC-PERFORMANCE; CHILLY CLIMATE; DOUBLE BIND; COLOR; GENDER; SCIENCE; UNDERGRADUATE
+12                                                               STUDENTS; WOMEN; RACE; UNDERGRADUATE; EDUCATION; RACISM; GAPS; ACHIEVEMENT; PERFORMANCE; PERSISTENCE
+13                                    CRITICAL RACE THEORY; MATHEMATICS; PERSISTENCE; IDENTITIES; BLACK; OPPORTUNITIES; PERCEPTIONS; EXPERIENCES; EDUCATION; IDEOLOGY
+14                                                                      HIGHER-EDUCATION; RACISM; COLOR; MATHEMATICS; STUDENTS; EXPERIENCES; IDEOLOGY; CLIMATE; WOMEN
+15                    CAMPUS RACIAL CLIMATE; CRITICAL RACE THEORY; HIDDEN CURRICULUM; BLACK-WOMEN; EXPERIENCES; SCIENCE; WHITE; MICROAGGRESSIONS; EDUCATION; IDENTITY
+16                                                                          GENDER STEREOTYPES; STEM; RACE; BLACK; PREJUDICE; PROMOTION; EMOTION; EQUITY; WOMAN; NEED
+17                                                                                                                                EDUCATION; STUDENTS; SCIENCE; COLOR
+                                    DOI Year LCS GCS
+1                      10.1037/a0038676 2015   5  88
+2              10.3102/0002831216676572 2016  14 230
+3                     10.1002/tea.21249 2016   2  62
+4              10.1177/2332858418816658 2018   4  61
+5            10.1186/s40594-020-00241-4 2020   3  66
+6              10.3102/0013189X20972718 2020  10 222
+7            10.1186/s40594-020-00250-3 2020   2  23
+8                     10.1002/tea.21584 2020   1  55
+9                    10.1111/socf.12724 2021   1   9
+10 10.1103/PhysRevPhysEducRes.17.010116 2021   1  32
+11           10.1186/s40594-022-00334-2 2022   2  14
+12                    10.1002/tea.21775 2022   3  22
+13        10.1080/10508406.2022.2073233 2022   3   8
+14               10.1187/cbe.22-06-0104 2023   2  18
+15                    10.1002/tea.21798 2023   1  10
+16        10.1080/01419870.2022.2159474 2023   1   5
+17        10.1080/00221546.2023.2265285 2024   1   2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># LEXICAL PATTERNS</span></span>
+<span id="cb40-2"><a></a><span class="co"># keywords in context</span></span>
+<span id="cb40-3"><a></a>M4_abstract <span class="ot">&lt;-</span> <span class="fu">corpus</span>(M4<span class="sc">$</span>AB)</span>
+<span id="cb40-4"><a></a><span class="co"># M4_abstract</span></span>
+<span id="cb40-5"><a></a>toks_M4_abstract <span class="ot">&lt;-</span> <span class="fu">corpus_subset</span>(M4_abstract) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-6"><a></a>  <span class="fu">tokens</span>()</span>
+<span id="cb40-7"><a></a></span>
+<span id="cb40-8"><a></a>toks <span class="ot">&lt;-</span> toks_M4_abstract</span>
+<span id="cb40-9"><a></a>toks_clean <span class="ot">&lt;-</span> <span class="fu">tokens</span>(toks, </span>
+<span id="cb40-10"><a></a>               <span class="at">remove_punct =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb40-11"><a></a>               <span class="at">remove_numbers =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-12"><a></a>        <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">"english"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="top-token-frequencies">Top token frequencies</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># Top token frequencies</span></span>
+<span id="cb41-2"><a></a>top_tokens <span class="ot">&lt;-</span> toks_clean <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a></a>  <span class="fu">tokens_group</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a></a>  <span class="fu">dfm</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb41-5"><a></a>  <span class="fu">textstat_frequency</span>(<span class="at">n =</span> <span class="dv">20</span>)</span>
+<span id="cb41-6"><a></a>top_tokens <span class="sc">%&gt;%</span>  <span class="co"># top tokens from abstracts</span></span>
+<span id="cb41-7"><a></a>  <span class="fu">filter</span>(feature <span class="sc">!=</span> <span class="st">"research"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-8"><a></a>  <span class="fu">filter</span>(feature <span class="sc">!=</span> <span class="st">"study"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-9"><a></a>  <span class="fu">filter</span>(feature <span class="sc">!=</span> <span class="st">"article"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-10"><a></a>  <span class="fu">filter</span>(feature <span class="sc">!=</span> <span class="st">"also"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-11"><a></a>  <span class="fu">filter</span>(feature <span class="sc">!=</span> <span class="st">"can"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       feature frequency rank docfreq group
+1         stem       343    1     145   all
+2       racism       330    2     186   all
+3        black       323    3      88   all
+4       health       249    4      67   all
+5     students       208    5      60   all
+6       social       202    6      98   all
+8       racial       192    8      93   all
+10       women       176   10      54   all
+11       white       174   11      79   all
+12 experiences       160   12      80   all
+14   education       127   14      67   all
+17        data       115   17      78   all
+18  indigenous       114   18      33   all
+19     science       113   19      50   all
+20        race       109   20      66   all</code></pre>
+</div>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../img/howard-logo.jpg" class="slide-logo"></p>

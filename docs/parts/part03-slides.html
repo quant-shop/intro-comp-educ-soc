@@ -213,147 +213,193 @@ Nathan Alexander, PhD
 </div>
 
 </section>
-<section id="part-3-working-with-data" class="slide level2">
-<h2>Part 3: Working with Data</h2>
-<p>We’ll start with a guided example using student assessment data.</p>
-<ul>
-<li>📊 <a href="data/DC_Public_Schools_Student_Assessment_Results.csv">DC Public Schools Student Assessment Results</a></li>
-</ul>
-<h3 id="step-1-load-required-packages">Step 1: Load Required Packages</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tibble' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.6.0
-✔ ggplot2   4.0.1     ✔ tibble    3.3.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.2.0     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/DC_Public_Schools_Student_Assessment_Results.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 189364 Columns: 23
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (18): SCHOOL_YEAR, SCHOOL_WARD, SCHOOL_NAME, LEA_NAME, ASSESSMENT_TYPE, ...
-dbl  (3): OBJECTID, SCHOOL_CODE, LEA_CODE
-lgl  (2): CREATED_DATE, LAST_EDITED_DATE
+<section id="case-study-hbcus-and-educational-geography" class="slide level2">
+<h2>Case Study: HBCUs and Educational Geography</h2>
+<p>In this section, we analyze data on Historically Black Colleges and Universities (HBCUs) to explore patterns in location, institutional type, and founding history.</p>
+</section>
+<section class="slide level2">
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<h3 id="step-1-load-packages">Step 1: Load Packages</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#install.packages("tidyverse")</span></span>
+<span id="cb1-2"><a></a><span class="co">#install.packages("lubridate")</span></span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># View the first few rows</span></span>
-<span id="cb7-2"><a></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We’ll start with a guided example using data on Historically Black Colleges and Universities.</p>
+<h3 id="step-2-load-the-data">Step 2: Load the data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a></a>hbcu <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/quant-shop/intro-comp-educ-soc/refs/heads/main/data/hbcu_data.csv"</span>)</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># View the first few rows</span></span>
+<span id="cb2-5"><a></a><span class="fu">head</span>(hbcu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 23
-  OBJECTID SCHOOL_YEAR SCHOOL_WARD SCHOOL_CODE SCHOOL_NAME     LEA_CODE LEA_NAME
-     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;   
-1        1 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-2        2 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-3        3 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-4        4 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-5        5 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-6        6 2014-15     Ward 8              217 Achievement Pr…      155 Achieve…
-# ℹ 16 more variables: ASSESSMENT_TYPE &lt;chr&gt;, SUBJECT &lt;chr&gt;,
-#   TESTED_GRADE_SUBJECT &lt;chr&gt;, GRADE_OF_ENROLLMENT &lt;chr&gt;, SUBGROUP &lt;chr&gt;,
-#   SUBGROUP_VALUE &lt;chr&gt;, PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt;,
-#   PERCENT_LEVEL_3_ &lt;chr&gt;, PERCENT_LEVEL_1 &lt;chr&gt;, PERCENT_LEVEL_2 &lt;chr&gt;,
-#   PERCENT_LEVEL_3 &lt;chr&gt;, PERCENT_LEVEL_4 &lt;chr&gt;, PERCENT_LEVEL_5 &lt;chr&gt;,
-#   TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt;, CREATED_DATE &lt;lgl&gt;,
-#   LAST_EDITED_DATE &lt;lgl&gt;</code></pre>
+<pre><code># A tibble: 6 × 7
+  name                     city       state founded   lat   lon type           
+  &lt;chr&gt;                    &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          
+1 Alabama A&amp;M University   Normal     AL       1875  34.8 -86.6 Public, 4 Year 
+2 Alabama State University Montgomery AL       1867  32.4 -86.3 Public, 4 Year 
+3 Albany State University  Albany     GA       1903  31.6 -84.2 Public, 4 Year 
+4 Alcorn State University  Lorman     MS       1871  31.9 -91.1 Public, 4 Year 
+5 Allen University         Columbia   SC       1870  34.0 -81.0 Private, 4 Year
+6 American Baptist College Nashville  TN       1924  36.2 -86.8 Private, 4 Year</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># Check structure</span></span>
-<span id="cb9-2"><a></a><span class="fu">glimpse</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Check structure</span></span>
+<span id="cb4-2"><a></a><span class="fu">glimpse</span>(hbcu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 189,364
-Columns: 23
-$ OBJECTID                       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
-$ SCHOOL_YEAR                    &lt;chr&gt; "2014-15", "2014-15", "2014-15", "2014-…
-$ SCHOOL_WARD                    &lt;chr&gt; "Ward 8", "Ward 8", "Ward 8", "Ward 8",…
-$ SCHOOL_CODE                    &lt;dbl&gt; 217, 217, 217, 217, 217, 217, 217, 217,…
-$ SCHOOL_NAME                    &lt;chr&gt; "Achievement Preparatory Academy PCS Wa…
-$ LEA_CODE                       &lt;dbl&gt; 155, 155, 155, 155, 155, 155, 155, 155,…
-$ LEA_NAME                       &lt;chr&gt; "Achievement Preparatory Academy PCS", …
-$ ASSESSMENT_TYPE                &lt;chr&gt; "PARCC", "PARCC", "PARCC", "PARCC", "PA…
-$ SUBJECT                        &lt;chr&gt; "Math", "Math", "Math", "Math", "Math",…
-$ TESTED_GRADE_SUBJECT           &lt;chr&gt; "Grade 3", "Grade 3", "Grade 3", "Grade…
-$ GRADE_OF_ENROLLMENT            &lt;chr&gt; "All", "All", "All", "All", "All", "All…
-$ SUBGROUP                       &lt;chr&gt; "Gender", "Gender", "Race by Gender", "…
-$ SUBGROUP_VALUE                 &lt;chr&gt; "Female", "Male", "Female-Black/African…
-$ PERCENT_MEETING_OR_EXCEEDING_E &lt;chr&gt; "n&lt;25", "27.3%", "n&lt;25", "27.3%", "26.8…
-$ PERCENT_LEVEL_3_               &lt;chr&gt; "n&lt;25", "60.6%", "n&lt;25", "60.6%", "71.4…
-$ PERCENT_LEVEL_1                &lt;chr&gt; "n&lt;25", "15.2%", "n&lt;25", "15.2%", "10.7…
-$ PERCENT_LEVEL_2                &lt;chr&gt; "n&lt;25", "24.2%", "n&lt;25", "24.2%", "17.9…
-$ PERCENT_LEVEL_3                &lt;chr&gt; "n&lt;25", "33.3%", "n&lt;25", "33.3%", "44.6…
-$ PERCENT_LEVEL_4                &lt;chr&gt; "n&lt;25", "27.3%", "n&lt;25", "27.3%", "26.8…
-$ PERCENT_LEVEL_5                &lt;chr&gt; "n&lt;25", "0.0%", "n&lt;25", "0.0%", "0.0%",…
-$ TOTAL_NUMBER_VALID_TEST_TAKERS &lt;chr&gt; "n&lt;25", "33", "n&lt;25", "33", "56", "n&lt;25…
-$ CREATED_DATE                   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ LAST_EDITED_DATE               &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</code></pre>
+<pre><code>Rows: 102
+Columns: 7
+$ name    &lt;chr&gt; "Alabama A&amp;M University", "Alabama State University", "Albany …
+$ city    &lt;chr&gt; "Normal", "Montgomery", "Albany", "Lorman", "Columbia", "Nashv…
+$ state   &lt;chr&gt; "AL", "AL", "GA", "MS", "SC", "TN", "AR", "SC", "NC", "FL", "A…
+$ founded &lt;dbl&gt; 1875, 1867, 1903, 1871, 1870, 1924, 1884, 1870, 1873, 1904, 19…
+$ lat     &lt;dbl&gt; 34.7834, 32.3643, 31.5785, 31.8769, 34.0298, 36.1659, 34.7465,…
+$ lon     &lt;dbl&gt; -86.5683, -86.2952, -84.1543, -91.1458, -81.0115, -86.7844, -9…
+$ type    &lt;chr&gt; "Public, 4 Year", "Public, 4 Year", "Public, 4 Year", "Public,…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Summary statistics</span></span>
-<span id="cb11-2"><a></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Summary statistics</span></span>
+<span id="cb6-2"><a></a><span class="fu">summary</span>(hbcu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    OBJECTID      SCHOOL_YEAR        SCHOOL_WARD         SCHOOL_CODE    
- Min.   :     1   Length:189364      Length:189364      Min.   : 101.0  
- 1st Qu.: 47342   Class :character   Class :character   1st Qu.: 214.0  
- Median : 94682   Mode  :character   Mode  :character   Median : 300.0  
- Mean   : 94682                                         Mean   : 480.7  
- 3rd Qu.:142023                                         3rd Qu.: 416.0  
- Max.   :189364                                         Max.   :3071.0  
- SCHOOL_NAME           LEA_CODE         LEA_NAME         ASSESSMENT_TYPE   
- Length:189364      Min.   :   1.00   Length:189364      Length:189364     
- Class :character   1st Qu.:   1.00   Class :character   Class :character  
- Mode  :character   Median :   1.00   Mode  :character   Mode  :character  
-                    Mean   :  64.89                                        
-                    3rd Qu.: 129.00                                        
-                    Max.   :4002.00                                        
-   SUBJECT          TESTED_GRADE_SUBJECT GRADE_OF_ENROLLMENT   SUBGROUP        
- Length:189364      Length:189364        Length:189364       Length:189364     
- Class :character   Class :character     Class :character    Class :character  
- Mode  :character   Mode  :character     Mode  :character    Mode  :character  
-                                                                               
-                                                                               
-                                                                               
- SUBGROUP_VALUE     PERCENT_MEETING_OR_EXCEEDING_E PERCENT_LEVEL_3_  
- Length:189364      Length:189364                  Length:189364     
- Class :character   Class :character               Class :character  
- Mode  :character   Mode  :character               Mode  :character  
-                                                                     
-                                                                     
-                                                                     
- PERCENT_LEVEL_1    PERCENT_LEVEL_2    PERCENT_LEVEL_3    PERCENT_LEVEL_4   
- Length:189364      Length:189364      Length:189364      Length:189364     
- Class :character   Class :character   Class :character   Class :character  
- Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-                                                                            
-                                                                            
-                                                                            
- PERCENT_LEVEL_5    TOTAL_NUMBER_VALID_TEST_TAKERS CREATED_DATE  
- Length:189364      Length:189364                  Mode:logical  
- Class :character   Class :character               NA's:189364   
- Mode  :character   Mode  :character                             
-                                                                 
-                                                                 
-                                                                 
- LAST_EDITED_DATE
- Mode:logical    
- NA's:189364     
-                 
-                 
-                 
-                 </code></pre>
+<pre><code>     name               city              state              founded    
+ Length:102         Length:102         Length:102         Min.   :1837  
+ Class :character   Class :character   Class :character   1st Qu.:1870  
+ Mode  :character   Mode  :character   Mode  :character   Median :1886  
+                                                          Mean   :1895  
+                                                          3rd Qu.:1905  
+                                                          Max.   :1988  
+      lat             lon             type          
+ Min.   :18.34   Min.   :-98.50   Length:102        
+ 1st Qu.:32.48   1st Qu.:-90.13   Class :character  
+ Median :34.02   Median :-84.64   Mode  :character  
+ Mean   :34.31   Mean   :-85.13                     
+ 3rd Qu.:36.17   3rd Qu.:-80.78                     
+ Max.   :39.93   Max.   :-64.96                     </code></pre>
 </div>
+</div>
+<h3 id="step-3-clean-the-data">Step 3: Clean the data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>hbcu <span class="ot">&lt;-</span> hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-3"><a></a>    <span class="at">founded =</span> <span class="fu">as.numeric</span>(founded),</span>
+<span id="cb8-4"><a></a>    <span class="at">type =</span> <span class="fu">as.factor</span>(type),</span>
+<span id="cb8-5"><a></a>    <span class="at">state =</span> <span class="fu">as.factor</span>(state)</span>
+<span id="cb8-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="step-4-basic-exploration">Step 4: Basic Exploration</h3>
+<p>How many institutions are in the data set?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">nrow</span>(hbcu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 102</code></pre>
+</div>
+</div>
+<p>What is the distribution by HBCU type?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">count</span>(type) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  type                     n
+  &lt;fct&gt;                &lt;int&gt;
+1 Private, 4 Year         45
+2 Public, 4 Year          40
+3 Public, 2 Year          11
+4 Private, Specialized     4
+5 Private, 2 Year          2</code></pre>
+</div>
+</div>
+<h3 id="step-5-historical-analysis">Step 5: Historical Analysis</h3>
+<p>When were the HBCUs founded?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> founded)) <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-5"><a></a>    <span class="at">title =</span> <span class="st">"Founding Years of HBCUs"</span>,</span>
+<span id="cb13-6"><a></a>    <span class="at">x =</span> <span class="st">"Year Founded"</span>,</span>
+<span id="cb13-7"><a></a>    <span class="at">y =</span> <span class="st">"Number of Institutions"</span></span>
+<span id="cb13-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part03_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="step-6-geographic-distribution">Step 6: Geographic Distribution</h3>
+<p>HBCUs by state</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">count</span>(state, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 21 × 2
+   state     n
+   &lt;fct&gt; &lt;int&gt;
+ 1 AL       14
+ 2 GA       10
+ 3 NC       10
+ 4 TX        9
+ 5 SC        8
+ 6 MS        7
+ 7 LA        6
+ 8 TN        6
+ 9 AR        4
+10 FL        4
+# ℹ 11 more rows</code></pre>
+</div>
+</div>
+<p>Basic visualization of HBCUs by state</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">count</span>(state) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(state, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb16-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-7"><a></a>    <span class="at">title =</span> <span class="st">"Number of HBCUs by State"</span>,</span>
+<span id="cb16-8"><a></a>    <span class="at">x =</span> <span class="st">"State"</span>,</span>
+<span id="cb16-9"><a></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb16-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part03_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="step-7-mapping">Step 7: Mapping</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co">#install.packages("maps", repos = "http://cran.us.r-project.org")</span></span>
+<span id="cb17-2"><a></a><span class="fu">library</span>(maps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>hbcu <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">borders</span>(<span class="st">"state"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">coord_fixed</span>(<span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-7"><a></a>    <span class="at">title =</span> <span class="st">"Geographic Distribution of HBCUs in the U.S."</span>,</span>
+<span id="cb18-8"><a></a>    <span class="at">x =</span> <span class="st">"Longitude"</span>,</span>
+<span id="cb18-9"><a></a>    <span class="at">y =</span> <span class="st">"Latitude"</span></span>
+<span id="cb18-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="part03_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>district <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/state-district-data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

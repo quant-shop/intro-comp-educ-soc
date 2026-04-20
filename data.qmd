@@ -1,16 +1,17 @@
 ---
-title: "Data"
+title: "Datasets"
 ---
 
-## Datasets
+You can view or download the datasets below:
 
-You can download the dataset below:
-
-- [Student Data]()
-
-## Description
-
-This dataset includes:
-- GPA
-- Study hours
-- Demographics
+| Dataset                                      | Description                                      | View                                                                 | Download |
+|---------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------|----------|
+| Closed Public Schools                        | Records of closed public schools                 | [View](data/Closed_Public_Schools.csv)                                    | [Download](data/Closed_Public_Schools.csv){download=""} |
+| DC Public Schools Assessment Results         | Student assessment performance data              | [View](data/DC_Public_Schools_Student_Assessment_Results.csv)              | [Download](data/DC_Public_Schools_Student_Assessment_Results.csv){download=""} |
+| HBCU Data                                    | Data on Historically Black Colleges & Universities | [View](data/hbcu_data.csv)                                                | [Download](data/hbcu_data.csv){download=""} |
+| Independent Schools                          | Private and independent school data              | [View](data/Independent_Schools.csv)                                      | [Download](data/Independent_Schools.csv){download=""} |
+| Data on U.S. Presidents                               | U.S. president-related dataset                   | [View](data/president.csv)                                                | [Download](data/president.csv){download=""} |
+| Yahoo! Policing Data                              | Data related to respondent's beliefs about police treating Black and while people the same          | [View](data/race_justice.csv)                                             | [Download](data/race_justice.csv){download=""} |
+| Racism in STEM Bibliometric Data                               | Text-based dataset on racism in STEM education journals             | [View](data/racism-in-stem.txt)                                           | [Download](data/racism-in-stem.txt){download=""} |
+| State District Data                          | District-level state data                        | [View](data/state-district-data.csv)                                      | [Download](data/state-district-data.csv){download=""} |
+| US State Data                                | State-level dataset                              | [View](data/us-state-data.csv)                                            | [Download](data/us-state-data.csv){download=""} |
