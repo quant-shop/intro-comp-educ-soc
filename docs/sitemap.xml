@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part02.html</loc>
-    <lastmod>2026-04-20T17:50:06.118Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/data.html</loc>
-    <lastmod>2026-04-20T16:37:52.307Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part01.html</loc>
-    <lastmod>2026-04-20T17:50:45.321Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part01-slides.html</loc>
-    <lastmod>2026-04-20T17:50:45.321Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part03.html</loc>
-    <lastmod>2026-04-20T17:33:32.640Z</lastmod>
+    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part02.html</loc>
+    <lastmod>2026-04-20T17:58:22.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/quant-shop/intro-comp-educ-soc/parts/part03-slides.html</loc>
+    <lastmod>2026-04-20T17:58:27.041Z</lastmod>
   </url>
 </urlset>
